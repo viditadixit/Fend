@@ -13,6 +13,7 @@
 		B38EE7B81FBEC84100834849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B38EE7B71FBEC84100834849 /* Assets.xcassets */; };
 		B38EE7BB1FBEC84100834849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B38EE7B91FBEC84100834849 /* LaunchScreen.storyboard */; };
 		B39F2C5920155D3E00785BBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F2C5820155D3E00785BBB /* ViewController.swift */; };
+		FE2B2AE2201684B6004CBA35 /* fend logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2B2AE1201684B6004CBA35 /* fend logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B38EE7BC1FBEC84100834849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B39F2C5820155D3E00785BBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fend_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE2B2AE1201684B6004CBA35 /* fend logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fend logo.png"; path = "../../../../../Desktop/fend logo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		B38EE7AB1FBEC84100834849 /* Fend App */ = {
 			isa = PBXGroup;
 			children = (
+				FE2B2AE1201684B6004CBA35 /* fend logo.png */,
 				B38EE7AC1FBEC84100834849 /* AppDelegate.swift */,
 				B38EE7B41FBEC84100834849 /* Main.storyboard */,
 				B38EE7B71FBEC84100834849 /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 			files = (
 				B38EE7BB1FBEC84100834849 /* LaunchScreen.storyboard in Resources */,
 				B38EE7B81FBEC84100834849 /* Assets.xcassets in Resources */,
+				FE2B2AE2201684B6004CBA35 /* fend logo.png in Resources */,
 				B38EE7B61FBEC84100834849 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
