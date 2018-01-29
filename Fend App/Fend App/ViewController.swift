@@ -14,6 +14,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         //super.viewDidLoad()
         let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        /*let screenSize:CGRect = UIScreen.main.bounds
+        let screenHeight = screenSize.height //real screen height
+        //let's suppose we want to have 10 points bottom margin
+        let newCenterY = screenHeight - loginButton.frame.height - 10
+        let newCenter = CGPoint(x: view.center.x, y: newCenterY)
+        //let newCenter = CGPoint(view.center.x, newCenterY)
+        loginButton.center = newCenter*/
         loginButton.center = view.center
         
         view.addSubview(loginButton)
