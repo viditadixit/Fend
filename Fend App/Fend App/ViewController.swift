@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         //super.viewDidLoad()
-        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
         /*let screenSize:CGRect = UIScreen.main.bounds
         let screenHeight = screenSize.height //real screen height
         //let's suppose we want to have 10 points bottom margin
