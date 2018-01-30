@@ -11,18 +11,20 @@ import FacebookCore
 import FacebookLogin
 import Firebase
 import FirebaseDatabase
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-         FirebaseApp.configure()
-      
         
+        FirebaseApp.configure()
+        
+        GMSServices.provideAPIKey("AIzaSyDiS8Ok1aleLm1XXE7PtfBNEgTX614UxCw")
+      
         //if the user is already logged in
         //if let accessToken = FBSDKAccessToken.current(){
             //getFBUserData()

@@ -77,18 +77,35 @@
         <!--Map-->
         <scene sceneID="p4G-NN-dDL">
             <objects>
-                <viewController title="Map" id="wtK-V7-Nl9" sceneMemberID="viewController">
+                <viewController title="Map" id="wtK-V7-Nl9" customClass="MapViewController" customModule="Fend_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pid-Tj-Qgm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hhf-WK-RPr">
+                                <rect key="frame" x="0.0" y="34" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Map" id="zku-8x-Rb7"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QtN-Dh-NIB">
+                                <rect key="frame" x="0.0" y="78" width="375" height="540"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5G3-iB-LYz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map icon" selectedImage="map icon" id="okv-Oj-GXe"/>
+                    <connections>
+                        <outlet property="googleMapsContainer" destination="QtN-Dh-NIB" id="XF4-uh-4jr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBD-pj-7Si" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="806"/>
+            <point key="canvasLocation" x="1088.8" y="805.54722638680664"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ABQ-oQ-yNg">
