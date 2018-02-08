@@ -124,13 +124,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KSA-ih-lLv">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSA-ih-lLv">
                                 <rect key="frame" x="0.0" y="33" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="fend" id="BUE-9w-HUl"/>
-                                </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fend logo" translatesAutoresizingMaskIntoConstraints="NO" id="wSv-pT-0LB">
+                                <rect key="frame" x="141" y="33" width="93" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -154,9 +155,19 @@
         <scene sceneID="QHg-Ts-Yko">
             <objects>
                 <viewController title="Profile" id="WQu-A1-Suw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="c1u-AB-EmE">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="c1u-AB-EmE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ww0-6y-pLG">
+                                <rect key="frame" x="0.0" y="33" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fend logo" translatesAutoresizingMaskIntoConstraints="NO" id="LDk-n7-ArJ">
+                                <rect key="frame" x="141" y="33" width="93" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="v8Y-rN-df8"/>
                     </view>
@@ -164,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KeL-Dx-6QA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2378" y="807"/>
+            <point key="canvasLocation" x="2376.8000000000002" y="806.44677661169419"/>
         </scene>
         <!--Map-->
         <scene sceneID="p4G-NN-dDL">
@@ -174,18 +185,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhf-WK-RPr">
+                                <rect key="frame" x="0.0" y="34" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QtN-Dh-NIB">
                                 <rect key="frame" x="0.0" y="78" width="375" height="540"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hhf-WK-RPr">
-                                <rect key="frame" x="0.0" y="34" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="fend" id="zku-8x-Rb7"/>
-                                </items>
-                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fend logo" translatesAutoresizingMaskIntoConstraints="NO" id="EEs-4P-fwV">
+                                <rect key="frame" x="141" y="34" width="93" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5G3-iB-LYz"/>
@@ -221,6 +233,7 @@
     </scenes>
     <resources>
         <image name="alert icon" width="25" height="25"/>
+        <image name="fend logo" width="674" height="300"/>
         <image name="map icon" width="25" height="25"/>
         <image name="profile image" width="25" height="25"/>
     </resources>
