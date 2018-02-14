@@ -11,6 +11,7 @@ import FacebookLogin
 import FacebookCore
 import FBSDKCoreKit
 import Firebase
+import FirebaseAuth
 import FirebaseDatabase
 
 class ViewController: UIViewController {
@@ -44,16 +45,53 @@ class ViewController: UIViewController {
     
     //function is fetching the user data
     func getFBUserData(){
-        if((FBSDKAccessToken.current()) != nil){
+        /*
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                // ...
+                return
+            }
+            // User is signed in
+            // ...
+            guard let uid = user?.uid else {
+                return
+            }
+            let usersReference = self.ref.child("users").child(uid)
+            if((FBSDKAccessToken.current()) != nil){
+                FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+                    if (error == nil){
+                        let values: [String:AnyObject] = result as! [String : AnyObject]
+                        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                            // if there's an error in saving to our firebase database
+                            if err != nil {
+                                print(err)
+                                return
+                            }
+                            // no error, so it means we've saved the user into our firebase database successfully
+                            print("Save the user successfully into Firebase database")
+                        })
+                    }
+                })
+            }
+            
+        }
+       
+        
+        // create a child reference - uid will let us wrap each users data in a unique user id for later reference
+        
+     */ if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     self.dict = result as! [String : AnyObject]
                     print(result!)
                     print(self.dict)
-                    self.ref.child("users").setValue(self.dict)
+                    let num = self.dict["id"]
+                    self.ref.child("users").child(num as! String).setValue(self.dict)
                 }
             })
         }
+ 
     }
     /*
     func addReport(){
