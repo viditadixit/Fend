@@ -8,22 +8,33 @@
 
 import UIKit
 import GoogleMaps
+import GooglePlaces
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var googleMapsContainer: UIView!
+    @IBOutlet weak var searchMaps: UISearchBar!
+
     var googleMapsView: GMSMapView!
-    
-    override func viewDidLoad() {
+    var placesClient: GMSPlacesClient!
+
+        override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        placesClient = GMSPlacesClient.shared()
+        searchMaps.delegate = self
+        
+        self.googleMapsView = GMSMapView(frame: self.googleMapsContainer.frame)
+        googleMapsView.settings.myLocationButton = true
+        googleMapsView.isMyLocationEnabled = true
+        searchMaps.layer.borderWidth = 0.5
+            
+        self.view.addSubview(googleMapsView)
+        googleMapsView.addSubview(searchMaps)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
-        self.googleMapsView = GMSMapView(frame: self.googleMapsContainer.frame)
-        self.view.addSubview(googleMapsView)
     }
     
     override func didReceiveMemoryWarning() {
