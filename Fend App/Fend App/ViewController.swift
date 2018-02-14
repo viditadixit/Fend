@@ -12,8 +12,11 @@ import FacebookCore
 import FBSDKCoreKit
 import Firebase
 import FirebaseDatabase
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
+    
+    @IBOutlet var mainView: UIView!
     
     var dict : [String : AnyObject]!
     var ref: DatabaseReference!
@@ -29,7 +32,11 @@ class ViewController: UIViewController {
             getFBUserData()
         }
         self.ref = Database.database().reference(fromURL: "fend1-7e1bd.firebaseio.com")
-           }
+        
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
