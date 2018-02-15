@@ -12,6 +12,7 @@ import FacebookLogin
 import Firebase
 import FirebaseDatabase
 import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         GMSServices.provideAPIKey("AIzaSyDiS8Ok1aleLm1XXE7PtfBNEgTX614UxCw")
+        GMSPlacesClient.provideAPIKey("AIzaSyDiS8Ok1aleLm1XXE7PtfBNEgTX614UxCw")
       
         //if the user is already logged in
         //if let accessToken = FBSDKAccessToken.current(){

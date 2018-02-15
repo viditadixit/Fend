@@ -16,6 +16,7 @@
 		B39F2C5920155D3E00785BBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F2C5820155D3E00785BBB /* ViewController.swift */; };
 		E34F149F201FCEB800C04B4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E34F149E201FCEB700C04B4D /* GoogleService-Info.plist */; };
 		F727FF92202042CA0037D60F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727FF91202042CA0037D60F /* MapViewController.swift */; };
+		FEFB5C1220225532005F9418 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB5C1120225532005F9418 /* ReportViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fend_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34F149E201FCEB700C04B4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F727FF91202042CA0037D60F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FEFB5C1120225532005F9418 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +94,11 @@
 				B38EE7BC1FBEC84100834849 /* Info.plist */,
 				B39F2C5820155D3E00785BBB /* ViewController.swift */,
 				F727FF91202042CA0037D60F /* MapViewController.swift */,
+<<<<<<< HEAD
 				B370442920224D8500A5FB2F /* ProfileViewController.swift */,
+=======
+				FEFB5C1120225532005F9418 /* ReportViewController.swift */,
+>>>>>>> master
 			);
 			path = "Fend App";
 			sourceTree = "<group>";
@@ -235,8 +241,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -250,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEFB5C1220225532005F9418 /* ReportViewController.swift in Sources */,
 				B39F2C5920155D3E00785BBB /* ViewController.swift in Sources */,
 				F727FF92202042CA0037D60F /* MapViewController.swift in Sources */,
 				B370442A20224D8500A5FB2F /* ProfileViewController.swift in Sources */,
@@ -392,7 +398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EA7WNSC3PN;
+				DEVELOPMENT_TEAM = 3G978376LC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -412,7 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EA7WNSC3PN;
+				DEVELOPMENT_TEAM = 3G978376LC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
