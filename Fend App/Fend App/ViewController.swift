@@ -17,19 +17,31 @@ class ViewController: UIViewController {
     
     var dict : [String : AnyObject]!
     var ref: DatabaseReference!
+    var fbLoginSuccess = false
     
     override func viewDidLoad() {
         //super.viewDidLoad()
+        //create button
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
         loginButton.center = view.center
+        //add it to view
         view.addSubview(loginButton)
-        // Do any additional setup after loading the view, typically from a nib.
         //if the user is already logged in
         if let accessToken = FBSDKAccessToken.current(){
             getFBUserData()
+            performSegue(withIdentifier: "loginSegue", sender: self)
         }
         self.ref = Database.database().reference(fromURL: "fend1-7e1bd.firebaseio.com")
-           }
+    }
+ 
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        if (FBSDKAccessToken.current() != nil && fbLoginSuccess == true){
+//            performSegue(withIdentifier: "loginSegue", sender: self)
+//        }
+//    }
+ 
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,13 +54,15 @@ class ViewController: UIViewController {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     self.dict = result as! [String : AnyObject]
-                    print(result!)
-                    print(self.dict)
+                    //print(result!)
+                    //print(self.dict)
                     self.ref.child("users").setValue(self.dict)
                 }
             })
         }
     }
+    
+
     
     
 }

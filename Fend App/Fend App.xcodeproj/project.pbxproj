@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC30C389B084A69C3828D96A /* Pods_Fend_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */; };
+		B370442A20224D8500A5FB2F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370442920224D8500A5FB2F /* ProfileViewController.swift */; };
 		B38EE7AD1FBEC84100834849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EE7AC1FBEC84100834849 /* AppDelegate.swift */; };
 		B38EE7B61FBEC84100834849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B38EE7B41FBEC84100834849 /* Main.storyboard */; };
 		B38EE7B81FBEC84100834849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B38EE7B71FBEC84100834849 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		1C881F7856B5F37376648603 /* Pods-Fend App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fend App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fend App/Pods-Fend App.release.xcconfig"; sourceTree = "<group>"; };
 		4DE10D4D5C76BD657934FEB5 /* Pods-Fend App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fend App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fend App/Pods-Fend App.debug.xcconfig"; sourceTree = "<group>"; };
+		B370442920224D8500A5FB2F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B38EE7A91FBEC84100834849 /* Fend App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fend App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B38EE7AC1FBEC84100834849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B38EE7B51FBEC84100834849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				B38EE7BC1FBEC84100834849 /* Info.plist */,
 				B39F2C5820155D3E00785BBB /* ViewController.swift */,
 				F727FF91202042CA0037D60F /* MapViewController.swift */,
+				B370442920224D8500A5FB2F /* ProfileViewController.swift */,
 			);
 			path = "Fend App";
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			files = (
 				B39F2C5920155D3E00785BBB /* ViewController.swift in Sources */,
 				F727FF92202042CA0037D60F /* MapViewController.swift in Sources */,
+				B370442A20224D8500A5FB2F /* ProfileViewController.swift in Sources */,
 				B38EE7AD1FBEC84100834849 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
