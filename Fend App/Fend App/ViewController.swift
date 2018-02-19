@@ -13,6 +13,7 @@ import FBSDKCoreKit
 import Firebase
 import FirebaseDatabase
 import CoreLocation
+import GooglePlaces
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -48,9 +49,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 //            performSegue(withIdentifier: "loginSegue", sender: self)
 //        }
 //    }
- 
-
-
     
     
     override func didReceiveMemoryWarning() {
@@ -71,9 +69,5 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             })
         }
     }
-    
-
-    
-    
 }
 
