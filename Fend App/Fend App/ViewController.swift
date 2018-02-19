@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     
     var dict : [String : AnyObject]!
     var ref: DatabaseReference!
-    var refReports: DatabaseReference!
     
     override func viewDidLoad() {
         //super.viewDidLoad()
@@ -33,15 +32,20 @@ class ViewController: UIViewController {
         }
         self.ref = Database.database().reference(fromURL: "fend1-7e1bd.firebaseio.com")
         
-    /*
-    refReports = Database.database().reference().child("reports");
-    
- */
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let ReportViewController = segue.destination as? ReportViewController {
+            ReportViewController.dict = dict
+            print (ReportViewController.dict)
+        }
+    }
+ */
     
     //function is fetching the user data
     func getFBUserData(){
@@ -87,23 +91,15 @@ class ViewController: UIViewController {
                     print(result!)
                     print(self.dict)
                     let num = self.dict["id"]
-                    self.ref.child("users").child(num as! String).setValue(self.dict)
+                    self.ref.child("users").child(num as! String).child("userInfo").setValue(self.dict)
                 }
             })
         }
  
     }
-    /*
-    func addReport(){
-        let key = refReports.childByAutoID().key
-        let report = ["id": key,
-                      "date": Date.text! as String,
-                      "location": LocationText.text! as String,
-                      "description" : DescriptionTextField.text! as String ]
-        refReports.child(key).setValue(report);
-        
-    }
-  */
+    
+    
+  
     
     
 }
