@@ -306,18 +306,49 @@
         <!--Connect Device-->
         <scene sceneID="iRl-F8-yWO">
             <objects>
-                <viewController storyboardIdentifier="connectDevice" title="Connect Device" id="4EI-IJ-riT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="connectDevice" title="Connect Device" id="4EI-IJ-riT" customClass="BTViewController" customModule="Fend_App" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DYo-5g-JPd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-NZ-6a5">
+                                <rect key="frame" x="33" y="154" width="315" height="398"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="K1K-em-8gG">
+                                        <rect key="frame" x="0.0" y="28" width="315" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K1K-em-8gG" id="h2x-xX-cY2">
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4EI-IJ-riT" id="Rn5-XF-kCE"/>
+                                    <outlet property="delegate" destination="4EI-IJ-riT" id="Vtj-5P-XNY"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available Bluetooth Devices" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qox-EQ-KHD">
+                                <rect key="frame" x="53" y="93" width="268" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="f8k-RU-tk4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Connect Device" id="fqq-dB-NkM"/>
+                    <connections>
+                        <outlet property="tableView" destination="W6q-NZ-6a5" id="dtW-1f-tTU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfy-Or-0ul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3214" y="1620"/>
+            <point key="canvasLocation" x="3213.5999999999999" y="1619.6401799100452"/>
         </scene>
         <!--Notification Settings-->
         <scene sceneID="qsX-LB-FmH">
