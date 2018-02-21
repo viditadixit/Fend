@@ -7,20 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CD18B54203B6BDB00C6080D /* BTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD18B53203B6BDB00C6080D /* BTViewController.swift */; };
+		0CD18B56203B709500C6080D /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD18B55203B709500C6080D /* CoreBluetooth.framework */; };
 		AC30C389B084A69C3828D96A /* Pods_Fend_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */; };
+		B370442A20224D8500A5FB2F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370442920224D8500A5FB2F /* ProfileViewController.swift */; };
 		B38EE7AD1FBEC84100834849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EE7AC1FBEC84100834849 /* AppDelegate.swift */; };
 		B38EE7B61FBEC84100834849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B38EE7B41FBEC84100834849 /* Main.storyboard */; };
 		B38EE7B81FBEC84100834849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B38EE7B71FBEC84100834849 /* Assets.xcassets */; };
 		B38EE7BB1FBEC84100834849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B38EE7B91FBEC84100834849 /* LaunchScreen.storyboard */; };
 		B39F2C5920155D3E00785BBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F2C5820155D3E00785BBB /* ViewController.swift */; };
-		E36886DE2033B376005E1F9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E36886DD2033B376005E1F9A /* GoogleService-Info.plist */; };
+		E381209E203E26FE0013FD3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E381209D203E26FE0013FD3F /* GoogleService-Info.plist */; };
 		F727FF92202042CA0037D60F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727FF91202042CA0037D60F /* MapViewController.swift */; };
 		FEFB5C1220225532005F9418 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB5C1120225532005F9418 /* ReportViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CD18B53203B6BDB00C6080D /* BTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTViewController.swift; sourceTree = "<group>"; };
+		0CD18B55203B709500C6080D /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		1C881F7856B5F37376648603 /* Pods-Fend App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fend App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fend App/Pods-Fend App.release.xcconfig"; sourceTree = "<group>"; };
 		4DE10D4D5C76BD657934FEB5 /* Pods-Fend App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fend App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fend App/Pods-Fend App.debug.xcconfig"; sourceTree = "<group>"; };
+		B370442920224D8500A5FB2F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B38EE7A91FBEC84100834849 /* Fend App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fend App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B38EE7AC1FBEC84100834849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B38EE7B51FBEC84100834849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,7 +35,7 @@
 		B38EE7BC1FBEC84100834849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B39F2C5820155D3E00785BBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fend_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E36886DD2033B376005E1F9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E381209D203E26FE0013FD3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F727FF91202042CA0037D60F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FEFB5C1120225532005F9418 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CD18B56203B709500C6080D /* CoreBluetooth.framework in Frameworks */,
 				AC30C389B084A69C3828D96A /* Pods_Fend_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,6 +56,7 @@
 		1014A748E2D3FF208DA23DBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0CD18B55203B709500C6080D /* CoreBluetooth.framework */,
 				CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */,
 			);
 			name = Frameworks;
@@ -84,7 +92,7 @@
 		B38EE7AB1FBEC84100834849 /* Fend App */ = {
 			isa = PBXGroup;
 			children = (
-				E36886DD2033B376005E1F9A /* GoogleService-Info.plist */,
+				E381209D203E26FE0013FD3F /* GoogleService-Info.plist */,
 				B38EE7AC1FBEC84100834849 /* AppDelegate.swift */,
 				B38EE7B41FBEC84100834849 /* Main.storyboard */,
 				B38EE7B71FBEC84100834849 /* Assets.xcassets */,
@@ -92,7 +100,9 @@
 				B38EE7BC1FBEC84100834849 /* Info.plist */,
 				B39F2C5820155D3E00785BBB /* ViewController.swift */,
 				F727FF91202042CA0037D60F /* MapViewController.swift */,
+				B370442920224D8500A5FB2F /* ProfileViewController.swift */,
 				FEFB5C1120225532005F9418 /* ReportViewController.swift */,
+				0CD18B53203B6BDB00C6080D /* BTViewController.swift */,
 			);
 			path = "Fend App";
 			sourceTree = "<group>";
@@ -160,7 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B38EE7BB1FBEC84100834849 /* LaunchScreen.storyboard in Resources */,
-				E36886DE2033B376005E1F9A /* GoogleService-Info.plist in Resources */,
+				E381209E203E26FE0013FD3F /* GoogleService-Info.plist in Resources */,
 				B38EE7B81FBEC84100834849 /* Assets.xcassets in Resources */,
 				B38EE7B61FBEC84100834849 /* Main.storyboard in Resources */,
 			);
@@ -254,7 +264,9 @@
 			files = (
 				FEFB5C1220225532005F9418 /* ReportViewController.swift in Sources */,
 				B39F2C5920155D3E00785BBB /* ViewController.swift in Sources */,
+				0CD18B54203B6BDB00C6080D /* BTViewController.swift in Sources */,
 				F727FF92202042CA0037D60F /* MapViewController.swift in Sources */,
+				B370442A20224D8500A5FB2F /* ProfileViewController.swift in Sources */,
 				B38EE7AD1FBEC84100834849 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EA7WNSC3PN;
+				DEVELOPMENT_TEAM = BC466548K3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -414,7 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EA7WNSC3PN;
+				DEVELOPMENT_TEAM = BC466548K3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",

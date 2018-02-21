@@ -13,26 +13,45 @@ import FBSDKCoreKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import CoreLocation
+import GooglePlaces
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
+    
+    @IBOutlet var mainView: UIView!
     
     var dict : [String : AnyObject]!
     var ref: DatabaseReference!
+    var fbLoginSuccess = false
     
     override func viewDidLoad() {
         //super.viewDidLoad()
+        //create button
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
         loginButton.center = view.center
+        //add it to view
         view.addSubview(loginButton)
-        // Do any additional setup after loading the view, typically from a nib.
         //if the user is already logged in
         
         if let accessToken = FBSDKAccessToken.current(){
             getFBUserData()
+            performSegue(withIdentifier: "loginSegue", sender: self)
         }
         self.ref = Database.database().reference(fromURL: "fend1-7e1bd.firebaseio.com")
         
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
     }
+ 
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        if (FBSDKAccessToken.current() != nil && fbLoginSuccess == true){
+//            performSegue(withIdentifier: "loginSegue", sender: self)
+//        }
+//    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -97,10 +116,5 @@ class ViewController: UIViewController {
         }
  
     }
-    
-    
-  
-    
-    
 }
 
