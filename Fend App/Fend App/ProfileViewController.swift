@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var accountName: UILabel!
     
-    let list = ["Account Info", "Connect Device", "Notification Settings", "About Fend"]
+    let list = ["Account Info", "My Reports", "Connect Device", "Notification Settings", "About Fend"]
     
     override func viewDidLoad(){
         //        super.viewDidLoad()
@@ -44,16 +44,20 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             account.textLabel?.text = list[0]
             return account;
         }else if(indexPath.row == 1){
+            let reports = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "reports")
+            reports.textLabel?.text = list[1]
+            return reports;
+        }else if(indexPath.row == 2){
             let device = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "device")
-            device.textLabel?.text = list[1]
+            device.textLabel?.text = list[2]
             return device;
-        }else if (indexPath.row == 2){
+        }else if (indexPath.row == 3){
             let notif = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "notif")
-            notif.textLabel?.text = list[2]
+            notif.textLabel?.text = list[3]
             return notif;
         }else{
             let about = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "about")
-            about.textLabel?.text = list[3]
+            about.textLabel?.text = list[4]
             return about;
         }
     }
@@ -64,10 +68,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         case 0: //For "one"
             segueIdentifier = "toAccount"
         case 1: //For "two"
-            segueIdentifier = "toDevice"
+            segueIdentifier = "toReportList"
         case 2: //For "three"
+            segueIdentifier = "toDevice"
+        case 3: //For "four"
             segueIdentifier = "toNotifs"
-        default: //For "three"
+        default: //For "five"
             segueIdentifier = "toAbout"
         }
         self.performSegue(withIdentifier: segueIdentifier, sender: self)

@@ -202,11 +202,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="account" id="sh6-WS-xkQ">
-                                        <rect key="frame" x="0.0" y="28" width="297" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="account" rowHeight="50" id="sh6-WS-xkQ">
+                                        <rect key="frame" x="0.0" y="28" width="297" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sh6-WS-xkQ" id="q0Y-BE-ZQF">
-                                            <rect key="frame" x="0.0" y="0.0" width="264" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="264" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -215,11 +215,11 @@
                                             <segue destination="CsY-o9-TMM" kind="show" identifier="toAccount" id="tJv-xE-Pm1"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="device" id="AKT-Nm-TJE">
-                                        <rect key="frame" x="0.0" y="88" width="297" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reports" rowHeight="50" id="AKT-Nm-TJE">
+                                        <rect key="frame" x="0.0" y="78" width="297" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AKT-Nm-TJE" id="Wmf-4Z-Td9">
-                                            <rect key="frame" x="0.0" y="0.0" width="264" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="264" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -228,11 +228,11 @@
                                             <segue destination="4EI-IJ-riT" kind="show" identifier="toDevice" id="bHF-TU-crE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="notif" id="OrB-u0-fY0">
-                                        <rect key="frame" x="0.0" y="148" width="297" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="device" rowHeight="50" id="OrB-u0-fY0">
+                                        <rect key="frame" x="0.0" y="128" width="297" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OrB-u0-fY0" id="gGt-f3-d3s">
-                                            <rect key="frame" x="0.0" y="0.0" width="264" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="264" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -241,17 +241,30 @@
                                             <segue destination="DJE-MT-9bI" kind="show" identifier="toNotifs" id="gf7-eQ-o0l"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="about" id="ECq-I3-dT8">
-                                        <rect key="frame" x="0.0" y="208" width="297" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="notif" rowHeight="50" id="ECq-I3-dT8">
+                                        <rect key="frame" x="0.0" y="178" width="297" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ECq-I3-dT8" id="c0d-Jg-BPp">
-                                            <rect key="frame" x="0.0" y="0.0" width="264" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="264" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <connections>
                                             <segue destination="UbO-56-BYv" kind="show" identifier="toAbout" id="4sL-Ng-Oul"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="about" rowHeight="50" id="DyH-mM-Tpv">
+                                        <rect key="frame" x="0.0" y="228" width="297" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DyH-mM-Tpv" id="a2N-cd-Ngy">
+                                            <rect key="frame" x="0.0" y="0.0" width="264" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <connections>
+                                            <segue destination="2cp-H2-Pku" kind="show" identifier="toReportList" id="7KU-T5-7sZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -286,6 +299,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KeL-Dx-6QA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3213.5999999999999" y="805.54722638680664"/>
+        </scene>
+        <!--My Reports-->
+        <scene sceneID="xth-vl-zbw">
+            <objects>
+                <viewController title="My Reports" id="2cp-H2-Pku" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CBz-uk-UEi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Mwx-yp-OUt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n1A-ob-dO1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1779" y="1626"/>
         </scene>
         <!--Account Info-->
         <scene sceneID="EOj-AU-fyW">
