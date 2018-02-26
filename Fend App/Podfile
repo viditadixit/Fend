@@ -2,6 +2,7 @@
 # platform :ios, '10.0'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
+pod 'Firebase/Auth'
 workspace 'Fend App'
 
 target 'Fend App' do

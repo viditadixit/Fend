@@ -16,7 +16,7 @@
 		B38EE7B81FBEC84100834849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B38EE7B71FBEC84100834849 /* Assets.xcassets */; };
 		B38EE7BB1FBEC84100834849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B38EE7B91FBEC84100834849 /* LaunchScreen.storyboard */; };
 		B39F2C5920155D3E00785BBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F2C5820155D3E00785BBB /* ViewController.swift */; };
-		E34F149F201FCEB800C04B4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E34F149E201FCEB700C04B4D /* GoogleService-Info.plist */; };
+		E381209E203E26FE0013FD3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E381209D203E26FE0013FD3F /* GoogleService-Info.plist */; };
 		F727FF92202042CA0037D60F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727FF91202042CA0037D60F /* MapViewController.swift */; };
 		FEFB5C1220225532005F9418 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB5C1120225532005F9418 /* ReportViewController.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +35,7 @@
 		B38EE7BC1FBEC84100834849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B39F2C5820155D3E00785BBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fend_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E34F149E201FCEB700C04B4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E381209D203E26FE0013FD3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F727FF91202042CA0037D60F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FEFB5C1120225532005F9418 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,7 +92,7 @@
 		B38EE7AB1FBEC84100834849 /* Fend App */ = {
 			isa = PBXGroup;
 			children = (
-				E34F149E201FCEB700C04B4D /* GoogleService-Info.plist */,
+				E381209D203E26FE0013FD3F /* GoogleService-Info.plist */,
 				B38EE7AC1FBEC84100834849 /* AppDelegate.swift */,
 				B38EE7B41FBEC84100834849 /* Main.storyboard */,
 				B38EE7B71FBEC84100834849 /* Assets.xcassets */,
@@ -170,7 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B38EE7BB1FBEC84100834849 /* LaunchScreen.storyboard in Resources */,
-				E34F149F201FCEB800C04B4D /* GoogleService-Info.plist in Resources */,
+				E381209E203E26FE0013FD3F /* GoogleService-Info.plist in Resources */,
 				B38EE7B81FBEC84100834849 /* Assets.xcassets in Resources */,
 				B38EE7B61FBEC84100834849 /* Main.storyboard in Resources */,
 			);
@@ -193,6 +193,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -206,6 +207,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
