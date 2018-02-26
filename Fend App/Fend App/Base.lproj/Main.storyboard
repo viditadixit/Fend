@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -399,16 +400,52 @@
             <objects>
                 <viewController storyboardIdentifier="aboutFend" title="About Fend" id="UbO-56-BYv" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T0z-X4-63A">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6g-pJ-hUY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="887"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about fend 1" translatesAutoresizingMaskIntoConstraints="NO" id="N7V-Vx-czo">
+                                        <rect key="frame" x="8" y="8" width="359" height="305"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="305" id="63g-j7-oJx"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about fend 2" translatesAutoresizingMaskIntoConstraints="NO" id="hfP-rf-SsI">
+                                        <rect key="frame" x="8" y="321" width="359" height="465"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="465" id="gIS-Yy-j6X"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hfP-rf-SsI" firstAttribute="trailing" secondItem="N7V-Vx-czo" secondAttribute="trailing" id="6uF-P9-b1l"/>
+                                    <constraint firstItem="hfP-rf-SsI" firstAttribute="top" secondItem="N7V-Vx-czo" secondAttribute="bottom" constant="8" symbolic="YES" id="VTn-ci-deC"/>
+                                    <constraint firstItem="N7V-Vx-czo" firstAttribute="leading" secondItem="u6g-pJ-hUY" secondAttribute="leadingMargin" id="XV0-ZY-TgW"/>
+                                    <constraint firstItem="N7V-Vx-czo" firstAttribute="centerX" secondItem="u6g-pJ-hUY" secondAttribute="centerX" id="Y0Q-Gs-32g"/>
+                                    <constraint firstItem="N7V-Vx-czo" firstAttribute="top" secondItem="u6g-pJ-hUY" secondAttribute="topMargin" id="hvh-O4-HfT"/>
+                                    <constraint firstAttribute="bottom" secondItem="N7V-Vx-czo" secondAttribute="bottom" constant="574" id="kW8-pu-J4S"/>
+                                    <constraint firstItem="hfP-rf-SsI" firstAttribute="leading" secondItem="N7V-Vx-czo" secondAttribute="leading" id="pYn-zx-5Ug"/>
+                                    <constraint firstItem="N7V-Vx-czo" firstAttribute="trailing" secondItem="u6g-pJ-hUY" secondAttribute="trailingMargin" id="wrM-6r-OFC"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u6g-pJ-hUY" firstAttribute="bottom" secondItem="S8e-mS-dtl" secondAttribute="bottom" id="7u6-JU-pq9"/>
+                            <constraint firstAttribute="trailing" secondItem="u6g-pJ-hUY" secondAttribute="trailing" id="Rqy-uX-FGZ"/>
+                            <constraint firstItem="u6g-pJ-hUY" firstAttribute="leading" secondItem="T0z-X4-63A" secondAttribute="leading" id="aIy-kB-42I"/>
+                            <constraint firstItem="u6g-pJ-hUY" firstAttribute="top" secondItem="S8e-mS-dtl" secondAttribute="top" id="qik-6g-58T"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="S8e-mS-dtl"/>
                     </view>
                     <navigationItem key="navigationItem" title="About Fend" id="Rlp-OF-RHI"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ba-Jv-3By" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4625" y="1620"/>
+            <point key="canvasLocation" x="4624.8000000000002" y="1619.1904047976013"/>
         </scene>
         <!--Map-->
         <scene sceneID="p4G-NN-dDL">
@@ -502,6 +539,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="about fend 1" width="564" height="476"/>
+        <image name="about fend 2" width="564" height="688"/>
         <image name="alert icon" width="25" height="25"/>
         <image name="fend logo" width="775" height="373"/>
         <image name="map icon" width="25" height="25"/>
