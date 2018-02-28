@@ -13,11 +13,11 @@
 		B370442A20224D8500A5FB2F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370442920224D8500A5FB2F /* ProfileViewController.swift */; };
 		B38EE7AD1FBEC84100834849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EE7AC1FBEC84100834849 /* AppDelegate.swift */; };
 		B38EE7B61FBEC84100834849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B38EE7B41FBEC84100834849 /* Main.storyboard */; };
-		B38EE7B81FBEC84100834849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B38EE7B71FBEC84100834849 /* Assets.xcassets */; };
 		B38EE7BB1FBEC84100834849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B38EE7B91FBEC84100834849 /* LaunchScreen.storyboard */; };
 		B39F2C5920155D3E00785BBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F2C5820155D3E00785BBB /* ViewController.swift */; };
-		B3A62C1F2044AEF200ABE9F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3A62C1E2044AEF200ABE9F7 /* GoogleService-Info.plist */; };
 		F727FF92202042CA0037D60F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727FF91202042CA0037D60F /* MapViewController.swift */; };
+		F7EB50E82044941E0073BECA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7EB50E72044941E0073BECA /* GoogleService-Info.plist */; };
+		F7EB50EA2044A9070073BECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7EB50E92044A9070073BECA /* Assets.xcassets */; };
 		FEFB5C1220225532005F9418 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB5C1120225532005F9418 /* ReportViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,13 +30,15 @@
 		B38EE7A91FBEC84100834849 /* Fend App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fend App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B38EE7AC1FBEC84100834849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B38EE7B51FBEC84100834849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B38EE7B71FBEC84100834849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B38EE7BA1FBEC84100834849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B38EE7BC1FBEC84100834849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B39F2C5820155D3E00785BBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3A62C1E2044AEF200ABE9F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fend_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F727FF91202042CA0037D60F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F7992498204737A1006718A1 /* Fend App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fend App.entitlements"; sourceTree = "<group>"; };
+		F7EB50E72044941E0073BECA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F7EB50E92044A9070073BECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Desktop/Assets.xcassets; sourceTree = "<group>"; };
 		FEFB5C1120225532005F9418 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,10 +94,11 @@
 		B38EE7AB1FBEC84100834849 /* Fend App */ = {
 			isa = PBXGroup;
 			children = (
+				F7992498204737A1006718A1 /* Fend App.entitlements */,
+				F7EB50E92044A9070073BECA /* Assets.xcassets */,
 				B3A62C1E2044AEF200ABE9F7 /* GoogleService-Info.plist */,
 				B38EE7AC1FBEC84100834849 /* AppDelegate.swift */,
 				B38EE7B41FBEC84100834849 /* Main.storyboard */,
-				B38EE7B71FBEC84100834849 /* Assets.xcassets */,
 				B38EE7B91FBEC84100834849 /* LaunchScreen.storyboard */,
 				B38EE7BC1FBEC84100834849 /* Info.plist */,
 				B39F2C5820155D3E00785BBB /* ViewController.swift */,
@@ -143,6 +146,11 @@
 					B38EE7A81FBEC84100834849 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
