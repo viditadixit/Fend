@@ -98,7 +98,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vtd-Kh-4QA">
                                 <rect key="frame" x="45" y="339" width="269" height="30"/>
@@ -470,6 +470,13 @@
                                             <action selector="searchClicked:" destination="wtK-V7-Nl9" eventType="touchUpInside" id="7Gh-nD-b7j"/>
                                         </connections>
                                     </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="Jfw-a5-Gt0">
+                                        <rect key="frame" x="100" y="517" width="174" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="sliderChanged:" destination="wtK-V7-Nl9" eventType="valueChanged" id="qJ2-Q8-TaV"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -484,6 +491,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="map icon" selectedImage="map icon" id="okv-Oj-GXe"/>
                     <connections>
                         <outlet property="googleMapsContainer" destination="QtN-Dh-NIB" id="XF4-uh-4jr"/>
+                        <outlet property="mapSlider" destination="Jfw-a5-Gt0" id="eOK-Vn-Zlr"/>
                         <outlet property="searchButton" destination="Wby-JJ-b3P" id="2AY-Td-rIY"/>
                         <outlet property="searchMaps" destination="Gb9-me-JYt" id="ubw-Ow-iA6"/>
                     </connections>

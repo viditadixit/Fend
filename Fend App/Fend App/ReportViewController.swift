@@ -16,16 +16,18 @@ import FirebaseAuth
 import FirebaseDatabase
 import GooglePlaces
 
-class ReportViewController: UIViewController {
+class ReportViewController: UIViewController, UITextFieldDelegate {
     
     var refReports: DatabaseReference!
     var ref: DatabaseReference!
     var dict : [String : AnyObject]!
-
+    
     @IBOutlet weak var DescriptionTextField: UITextField!
     @IBOutlet weak var LocationText: UITextField!
     @IBOutlet weak var Date: UIDatePicker!
     
+    var latitude : CLLocationDegrees = 0.0
+    var longitude : CLLocationDegrees = 0.0
     
     @IBAction func buttonSubmit(_ sender: UIButton) {
         addReport()
@@ -33,6 +35,8 @@ class ReportViewController: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        self.DescriptionTextField.delegate = self;
         
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler: { (connection, result, error) -> Void in
@@ -47,20 +51,29 @@ class ReportViewController: UIViewController {
             })
         }
     }
-        
+    
     //  refReports = Database.database().reference().child("reports");
-
+    
+    /*@IBAction func locationClicked(_ sender: Any) {
+     let autocompleteController = GMSAutocompleteViewController()
+     autocompleteController.delegate = self
+     present(autocompleteController, animated: true, completion: nil)
+     }*/
+    
     @IBAction func locationClicked(_ sender: Any) {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         present(autocompleteController, animated: true, completion: nil)
     }
     
-    
-   
     override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func changeDateToString(sender: UIDatePicker) -> String {
@@ -83,10 +96,13 @@ class ReportViewController: UIViewController {
                       "location": LocationText.text! as String,
                       "description" : DescriptionTextField.text! as String ]
         refReports.child(key).setValue(report)
+        
+        let pin = ["latitude": latitude,
+                   "longitude": longitude,
+                   "date": convertedDate] as [String : Any]
+        
+        //TODO: store pin in database
     }
-    
-    
-    
 }
 
 extension ReportViewController: GMSAutocompleteViewControllerDelegate {
@@ -94,9 +110,12 @@ extension ReportViewController: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         /*print("Place name: \(place.name)")
-        print("Place address: \(place.formattedAddress)")
-        print("Place attributions: \(place.attributions)")*/
+         print("Place address: \(place.formattedAddress)")
+         print("Place attributions: \(place.attributions)")*/
         LocationText.text = place.formattedAddress
+        self.latitude = place.coordinate.latitude
+        self.longitude = place.coordinate.longitude
+        
         dismiss(animated: true, completion: nil)
     }
     
