@@ -33,6 +33,7 @@
 		B38EE7BA1FBEC84100834849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B38EE7BC1FBEC84100834849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B39F2C5820155D3E00785BBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B3A62C1E2044AEF200ABE9F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fend_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F727FF91202042CA0037D60F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F7992498204737A1006718A1 /* Fend App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fend App.entitlements"; sourceTree = "<group>"; };
@@ -95,7 +96,7 @@
 			children = (
 				F7992498204737A1006718A1 /* Fend App.entitlements */,
 				F7EB50E92044A9070073BECA /* Assets.xcassets */,
-				F7EB50E72044941E0073BECA /* GoogleService-Info.plist */,
+				B3A62C1E2044AEF200ABE9F7 /* GoogleService-Info.plist */,
 				B38EE7AC1FBEC84100834849 /* AppDelegate.swift */,
 				B38EE7B41FBEC84100834849 /* Main.storyboard */,
 				B38EE7B91FBEC84100834849 /* LaunchScreen.storyboard */,
@@ -177,8 +178,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B38EE7BB1FBEC84100834849 /* LaunchScreen.storyboard in Resources */,
-				F7EB50E82044941E0073BECA /* GoogleService-Info.plist in Resources */,
-				F7EB50EA2044A9070073BECA /* Assets.xcassets in Resources */,
+				B3A62C1F2044AEF200ABE9F7 /* GoogleService-Info.plist in Resources */,
+				B38EE7B81FBEC84100834849 /* Assets.xcassets in Resources */,
 				B38EE7B61FBEC84100834849 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,7 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3G978376LC;
+				DEVELOPMENT_TEAM = EA7WNSC3PN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -433,7 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3G978376LC;
+				DEVELOPMENT_TEAM = EA7WNSC3PN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
