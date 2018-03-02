@@ -20,6 +20,7 @@ class ReportViewController: UIViewController, UITextFieldDelegate {
     
     var refReports: DatabaseReference!
     var ref: DatabaseReference!
+    var locationRef: DatabaseReference!
     var dict : [String : AnyObject]!
     
     @IBOutlet weak var DescriptionTextField: UITextField!
@@ -31,6 +32,8 @@ class ReportViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func buttonSubmit(_ sender: UIButton) {
         addReport()
+        self.DescriptionTextField.text = ""
+        self.LocationText.text = ""
     }
     
     override func viewDidLoad(){
@@ -51,14 +54,6 @@ class ReportViewController: UIViewController, UITextFieldDelegate {
             })
         }
     }
-    
-    //  refReports = Database.database().reference().child("reports");
-    
-    /*@IBAction func locationClicked(_ sender: Any) {
-     let autocompleteController = GMSAutocompleteViewController()
-     autocompleteController.delegate = self
-     present(autocompleteController, animated: true, completion: nil)
-     }*/
     
     @IBAction func locationClicked(_ sender: Any) {
         let autocompleteController = GMSAutocompleteViewController()
@@ -97,9 +92,14 @@ class ReportViewController: UIViewController, UITextFieldDelegate {
                       "description" : DescriptionTextField.text! as String ]
         refReports.child(key).setValue(report)
         
-        let pin = ["latitude": latitude,
-                   "longitude": longitude,
+        locationRef = Database.database().reference().child("location")
+        let key1 = locationRef.childByAutoId().key
+        
+        let pin = ["latitude": Double(latitude),
+                   "longitude": Double(longitude),
                    "date": convertedDate] as [String : Any]
+        
+        locationRef.child(key1).setValue(pin)
         
         //TODO: store pin in database
     }
@@ -109,9 +109,6 @@ extension ReportViewController: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        /*print("Place name: \(place.name)")
-         print("Place address: \(place.formattedAddress)")
-         print("Place attributions: \(place.attributions)")*/
         LocationText.text = place.formattedAddress
         self.latitude = place.coordinate.latitude
         self.longitude = place.coordinate.longitude
