@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import CoreLocation
+import FirebaseDatabase
 
 class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDelegate {
     
@@ -22,6 +23,7 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
     var placesClient: GMSPlacesClient!
     var camera: GMSCameraPosition!
     var locationManager = CLLocationManager()
+    var locationRef: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +68,29 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
     func displayMarkers() {
         //get coordinates from database
         
-        let latitude = [27.02834, -27.97589, 41.30578, -8.24380, -11.20098, 0.49786, -18.26830, 54.23442, 31.49618, 65.61194]
+        locationRef = Database.database().reference().child("location")
+        locationRef.observeSingleEvent(of: .value, with:  {(snapshot) in
+            print(snapshot.childrenCount)
+            for rest in snapshot.children.allObjects as! [DataSnapshot] {
+                let restDict = rest.value as? [String:Any]
+                let lat = restDict!["latitude"] as! Double
+                let lon = restDict!["longitude"] as! Double
+                let date = restDict!["date"] as? String
+
+                let position = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                let marker = GMSMarker(position: position)
+                marker.icon = UIImage(named: "pin")
+                marker.title = "Theft Occurred"
+                let snippet = date
+                marker.snippet = snippet
+                marker.map = self.googleMapsView
+                
+                //print(String(latitude))
+            }
+        }) {(error) in print(error.localizedDescription)}
+        
+        
+        /*let latitude = [27.02834, -27.97589, 41.30578, -8.24380, -11.20098, 0.49786, -18.26830, 54.23442, 31.49618, 65.61194]
         let longitude = [109.62281, 120.36426, 93.15085, -54.55858, -59.45719, 109.14648, -48.01558, 98.74914, 114.86978, -109.32365]
         
         for i in 1...latitude.count {
@@ -79,7 +103,7 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
             let snippet = String(lat) + " " + String(lon)
             marker.snippet = snippet
             marker.map = googleMapsView
-        }
+        }*/
     }
     
     @IBAction func sliderChanged(_ sender: Any) {
