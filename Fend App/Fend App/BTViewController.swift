@@ -84,7 +84,7 @@ extension BTViewController: CBPeripheralDelegate {
             let a = [UInt8] (unwrapped)
             print (a)
             let b = UInt8(1)
-            if a[0] == b {
+            if a[0] != b {
                 print ("Button Pressed!")
                 getLocation()
                 let content = UNMutableNotificationContent()
