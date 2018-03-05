@@ -87,6 +87,7 @@ extension BTViewController: CBPeripheralDelegate {
             if a[0] != b {
                 print ("Button Pressed!")
                 getLocation()
+                sendAlert()
                 let content = UNMutableNotificationContent()
                 content.title = "SOMEONE IS OPENING YOUR BACKPACK"
                 content.subtitle = "Your backpack is in troubleeeeeee"
@@ -105,7 +106,7 @@ extension BTViewController: CBPeripheralDelegate {
 }
 
 extension BTViewController: CLLocationManagerDelegate {
-    func getLocation(){
+    func getLocation() -> (lat: Double, long: Double){
         var currentLocation = CLLocation()
         var locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -113,6 +114,15 @@ extension BTViewController: CLLocationManagerDelegate {
         currentLocation = locationManager.location!
         print("latitude: \(currentLocation.coordinate.latitude)")
         print("longitude: \(currentLocation.coordinate.longitude)")
+        return(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
+    }
+    
+    func sendAlert(){
+        let coordinates = getLocation()
+        let alert = UIAlertController(title: "Your backpack is being broken into!", message: "Location coordinates:\n Latitude: \(coordinates.lat)\n Longitude: \(coordinates.long)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "K cool", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "False Alarm!", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
     }
 }
 
