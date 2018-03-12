@@ -16,6 +16,8 @@ import FirebaseDatabase
 import CoreLocation
 import GooglePlaces
 
+var fbId = ""
+
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var mainView: UIView!
@@ -110,6 +112,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     print(result!)
                     print(self.dict)
                     let num = self.dict["id"]
+                    fbId = num as! String
                     self.ref.child("users").child(num as! String).child("userInfo").setValue(self.dict)
                 }
             })
