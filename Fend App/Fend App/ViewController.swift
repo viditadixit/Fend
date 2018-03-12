@@ -15,6 +15,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import CoreLocation
 import GooglePlaces
+import UserNotifications
 
 var fbId = ""
 
@@ -44,6 +45,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
     }
  
     
