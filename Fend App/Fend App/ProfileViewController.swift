@@ -79,6 +79,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+
+    
     func getFBUserData(){
         //get picture
         let pictureRequest = FBSDKGraphRequest(graphPath: "me/picture?type=large&redirect=false", parameters: nil).start(completionHandler: {(connection,result,error) -> Void in
