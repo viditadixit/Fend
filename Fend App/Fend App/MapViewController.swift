@@ -44,7 +44,7 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
         googleMapsView.addSubview(searchButton)
         googleMapsView.addSubview(mapSlider)
         
-        displayMarkers()
+        displayMarkers(time: 2)
     }
     
     @IBAction func searchClicked(_ sender: Any) {
@@ -65,59 +65,84 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
         
     }
     
-    func displayMarkers() {
-        //get coordinates from database
+    func displayMarkers(time: integer_t) {
         
+        //clear all current markers
+        self.googleMapsView.clear()
+        
+        //get coordinates from database
         locationRef = Database.database().reference().child("location")
         locationRef.observeSingleEvent(of: .value, with:  {(snapshot) in
-            print(snapshot.childrenCount)
+            //print(snapshot.childrenCount)
             for rest in snapshot.children.allObjects as! [DataSnapshot] {
                 let restDict = rest.value as? [String:Any]
                 let lat = restDict!["latitude"] as! Double
                 let lon = restDict!["longitude"] as! Double
                 let date = restDict!["date"] as? String
-
-                let position = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-                let marker = GMSMarker(position: position)
-                marker.icon = UIImage(named: "pin")
-                marker.title = "Theft Occurred"
-                let snippet = date
-                marker.snippet = snippet
-                marker.map = self.googleMapsView
                 
-                //print(String(latitude))
+                if (self.isValidDate(date: (date?.toDate(dateFormat: "MM/dd/yyyy HH:mm"))!, time: time)) {
+                    let position = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                    let marker = GMSMarker(position: position)
+                    marker.icon = UIImage(named: "pin")
+                    marker.title = "Theft Occurred"
+                    marker.snippet = date
+                    marker.map = self.googleMapsView
+                }
             }
         }) {(error) in print(error.localizedDescription)}
-        
-        
-        /*let latitude = [27.02834, -27.97589, 41.30578, -8.24380, -11.20098, 0.49786, -18.26830, 54.23442, 31.49618, 65.61194]
-        let longitude = [109.62281, 120.36426, 93.15085, -54.55858, -59.45719, 109.14648, -48.01558, 98.74914, 114.86978, -109.32365]
-        
-        for i in 1...latitude.count {
-            let lat = latitude[i-1]
-            let lon = longitude[i-1]
-            let position = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-            let marker = GMSMarker(position: position)
-            marker.icon = UIImage(named: "pin")
-            marker.title = "Theft Occurred"
-            let snippet = String(lat) + " " + String(lon)
-            marker.snippet = snippet
-            marker.map = googleMapsView
-        }*/
     }
     
     @IBAction func sliderChanged(_ sender: Any) {
         mapSlider.setValue(Float(lroundf(mapSlider.value)), animated: true)
         
         if (mapSlider.value == 0.0) {
-            googleMapsView.animate(toZoom: 0)
+            //googleMapsView.animate(toZoom: 0)
+            self.displayMarkers(time: 0)
         } else if (mapSlider.value == 1.0) {
-            googleMapsView.animate(toZoom: 5)
+            //googleMapsView.animate(toZoom: 5)
+            self.displayMarkers(time: 1)
         } else if (mapSlider.value == 2.0) {
-            googleMapsView.animate(toZoom: 10)
+            //googleMapsView.animate(toZoom: 10)
+            self.displayMarkers(time:2)
         } else {
-            googleMapsView.animate(toZoom: 15)
+            //googleMapsView.animate(toZoom: 15)
+            self.displayMarkers(time: 3)
         }
+    }
+    
+    func isValidDate(date: Date, time: integer_t) -> Bool {
+        var earlyDate : Date
+        if (time == 0) {
+            //1 day
+            earlyDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())!;
+            if (date >= earlyDate) {
+                return true
+            }
+            //print("Date is : \(earlyDate)")
+        } else if (time == 1) {
+            //1 week
+            earlyDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!;
+            if (date >= earlyDate) {
+                return true
+            }
+            //print("Date is : \(earlyDate)")
+        } else if (time == 2) {
+            //1 month
+            earlyDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())!;
+            if (date >= earlyDate) {
+                return true
+            }
+            //print("Date is : \(earlyDate)")
+        } else if (time == 3) {
+            //year
+            earlyDate = Calendar.current.date(byAdding: .year, value: -1, to: Date())!;
+            if (date >= earlyDate) {
+                return true
+            }
+            //print("Date is : \(earlyDate)")
+        }
+        
+        return false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -152,5 +177,16 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
     
     func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+}
+
+extension String
+{
+    func toDate( dateFormat format  : String) -> Date
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+        return dateFormatter.date(from: self)!
     }
 }
