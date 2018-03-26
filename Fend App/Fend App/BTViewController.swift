@@ -11,9 +11,11 @@ import UserNotifications
 import CoreLocation
 
 let microbitCBUUID = CBUUID(string: "0xA000")
+var HardwareName = ""
+var selectionFlag = 0
 
 //main bluetooth controller class
-class BTViewController: UIViewController {
+class BTViewController: UIViewController, UITableViewDelegate {
     var centralManager: CBCentralManager?
     var peripherals = Array<CBPeripheral>()
     var testFend: CBPeripheral!
@@ -24,6 +26,27 @@ class BTViewController: UIViewController {
         
         //Initialise CoreBluetooth Central Manager
         centralManager = CBCentralManager(delegate: self, queue: DispatchQueue.main)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let indexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRow(at: indexPath!)! as UITableViewCell
+        let currentItem = currentCell.textLabel!.text
+        HardwareName = currentItem ?? ""
+        selectionFlag = 1
+        let alert = UIAlertController(title: "You selected something!", message: currentItem, preferredStyle: .alert)
+         alert.addAction(UIAlertAction(title: "K cool", style: .default, handler: nil))
+         alert.addAction(UIAlertAction(title: "False Alarm!", style: .cancel, handler: nil))
+         self.present(alert, animated: true)
+        for p in peripherals {
+            if p.name == HardwareName {
+                print("Found the fend thing")
+                testFend = p
+                testFend.delegate = self
+                centralManager?.stopScan()
+                centralManager?.connect(testFend)
+            }
+        }
     }
 }
 
@@ -40,13 +63,13 @@ extension BTViewController: CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         peripherals.append(peripheral)
         tableView.reloadData()
-        if peripheral.name == "testFend" {
+        /*if peripheral.name == "testFend" {
             print("Found the fend thing")
             testFend = peripheral
             testFend.delegate = self
             centralManager?.stopScan()
             centralManager?.connect(testFend)
-        }
+        }*/
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
@@ -142,3 +165,4 @@ extension BTViewController: UITableViewDataSource {
     
     
 }
+
