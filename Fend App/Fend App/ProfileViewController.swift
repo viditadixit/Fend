@@ -10,6 +10,7 @@ import UIKit
 import FacebookLogin
 import FacebookCore
 import FBSDKCoreKit
+import FBSDKLoginKit
 import Firebase
 import FirebaseDatabase
 
@@ -22,18 +23,44 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var accountName: UILabel!
     
-    let list = ["Account Info", "My Reports", "Connect Device", "Notification Settings", "About Fend"]
+    @IBOutlet weak var logoutButton: UIButton!
+    
+    let list = ["Account Info", "My Reports", "Connect Device", "Notification Settings", "About Fend", "Logout"]
     
     override func viewDidLoad(){
         //        super.viewDidLoad()
-        //        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
-        //        loginButton.center = view.center
-        //        view.addSubview(loginButton)
+        /*let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
+        let newCenter = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height - 80)
+        loginButton.center = newCenter
+        view.addSubview(loginButton)
+ */
         self.ref = Database.database().reference(fromURL: "fend1-7e1bd.firebaseio.com")
         getFBUserData()
+       
+        /*
+        if (FBSDKAccessToken.current() != nil){
+           //logged in
+        }else{
+            print("load logoutSegue")
+           // self.performSegue(withIdentifier: "unwindtoLogin", sender: self)
+            self.performSegue(withIdentifier: "logoutSegue", sender: self)
+        } */
         
     }
     
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        
+       /* if (FBSDKAccessToken.current() != nil){
+            //logged in
+        }else{
+            print("appear logoutSegue")
+            //self.performSegue(withIdentifier: "unwindtoLogin", sender: self)
+            self.performSegue(withIdentifier: "logoutSegue", sender: self)
+        } */
+    }
+    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
@@ -55,11 +82,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             let notif = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "notif")
             notif.textLabel?.text = list[3]
             return notif;
-        }else{
+        }else {
             let about = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "about")
             about.textLabel?.text = list[4]
             return about;
         }
+//        } else{
+//            let logout = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "logout")
+//            logout.textLabel?.text = list[5]
+//            return logout
+//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -75,14 +107,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             segueIdentifier = "toNotifs"
         default: //For "five"
             segueIdentifier = "toAbout"
+//        default: //For "six"
+//            segueIdentifier = "toLogout"
         }
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
 
+
+    //logout
+    @IBAction func buttonClicked(_ sender: Any) {
+        FBSDKAccessToken.setCurrent(nil)
+        self.performSegue(withIdentifier: "logoutSegue", sender: self)
+    }
     
     func getFBUserData(){
         //get picture
