@@ -10,6 +10,7 @@ import UIKit
 import FacebookLogin
 import FacebookCore
 import FBSDKCoreKit
+import FBSDKLoginKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
@@ -19,7 +20,7 @@ import UserNotifications
 
 var fbId = ""
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate{
     
     @IBOutlet var mainView: UIView!
     
@@ -27,17 +28,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var ref: DatabaseReference!
     var fbLoginSuccess = false
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func viewDidLoad() {
-        //super.viewDidLoad()
+        super.viewDidLoad()
         //create button
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
-        loginButton.center = view.center
+        let newCenter = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height*(3/4))
+        loginButton.center = newCenter
         //add it to view
         view.addSubview(loginButton)
         //if the user is already logged in
         
         if let accessToken = FBSDKAccessToken.current(){
             getFBUserData()
+            print("load loginSegue")
             performSegue(withIdentifier: "loginSegue", sender: self)
         }
         self.ref = Database.database().reference(fromURL: "fend1-7e1bd.firebaseio.com")
@@ -49,11 +56,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
  
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        if (FBSDKAccessToken.current() != nil && fbLoginSuccess == true){
-//            performSegue(withIdentifier: "loginSegue", sender: self)
-//        }
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        if let accessToken = FBSDKAccessToken.current(){
+            print("appear loginSegue")
+            performSegue(withIdentifier: "loginSegue", sender: self)
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -72,42 +80,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //function is fetching the user data
     func getFBUserData(){
-        /*
-        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        Auth.auth().signIn(with: credential) { (user, error) in
-            if let error = error {
-                // ...
-                return
-            }
-            // User is signed in
-            // ...
-            guard let uid = user?.uid else {
-                return
-            }
-            let usersReference = self.ref.child("users").child(uid)
-            if((FBSDKAccessToken.current()) != nil){
-                FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler: { (connection, result, error) -> Void in
-                    if (error == nil){
-                        let values: [String:AnyObject] = result as! [String : AnyObject]
-                        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
-                            // if there's an error in saving to our firebase database
-                            if err != nil {
-                                print(err)
-                                return
-                            }
-                            // no error, so it means we've saved the user into our firebase database successfully
-                            print("Save the user successfully into Firebase database")
-                        })
-                    }
-                })
-            }
-            
-        }
-       
-        
-        // create a child reference - uid will let us wrap each users data in a unique user id for later reference
-        
-     */ if((FBSDKAccessToken.current()) != nil){
+        if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     self.dict = result as! [String : AnyObject]
