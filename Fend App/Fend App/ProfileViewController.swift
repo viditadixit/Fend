@@ -34,6 +34,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         loginButton.center = newCenter
         view.addSubview(loginButton)
  */
+        
+        let imageView = UIImageView(frame: CGRect(x:141, y: 20, width: 93, height: 44))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "fend logo.png")
+        imageView.image = image;
+        self.navigationItem.titleView = imageView
+        
         self.ref = Database.database().reference(fromURL: "fend1-7e1bd.firebaseio.com")
         getFBUserData()
        
