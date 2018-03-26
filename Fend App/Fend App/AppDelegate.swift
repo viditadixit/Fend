@@ -28,9 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyDiS8Ok1aleLm1XXE7PtfBNEgTX614UxCw")
         GMSPlacesClient.provideAPIKey("AIzaSyDiS8Ok1aleLm1XXE7PtfBNEgTX614UxCw")
       
+        //FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         //if the user is already logged in
         //if let accessToken = FBSDKAccessToken.current(){
-            //getFBUserData()
           //  print("Hello World!")
      //   }
         

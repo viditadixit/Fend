@@ -18,6 +18,7 @@
 		B39F2C5920155D3E00785BBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F2C5820155D3E00785BBB /* ViewController.swift */; };
 		B3A62C1F2044AEF200ABE9F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3A62C1E2044AEF200ABE9F7 /* GoogleService-Info.plist */; };
 		B3AA7ACA20473B1400D40E45 /* MyReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7AC920473B1400D40E45 /* MyReportsViewController.swift */; };
+		B3B83A692062E40B008B42F8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B83A682062E40B008B42F8 /* TabBarViewController.swift */; };
 		F727FF92202042CA0037D60F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727FF91202042CA0037D60F /* MapViewController.swift */; };
 		FEFB5C1220225532005F9418 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB5C1120225532005F9418 /* ReportViewController.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		B39F2C5820155D3E00785BBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3A62C1E2044AEF200ABE9F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B3AA7AC920473B1400D40E45 /* MyReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReportsViewController.swift; sourceTree = "<group>"; };
+		B3B83A682062E40B008B42F8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fend_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F727FF91202042CA0037D60F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FEFB5C1120225532005F9418 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				FEFB5C1120225532005F9418 /* ReportViewController.swift */,
 				0CD18B53203B6BDB00C6080D /* BTViewController.swift */,
 				B3AA7AC920473B1400D40E45 /* MyReportsViewController.swift */,
+				B3B83A682062E40B008B42F8 /* TabBarViewController.swift */,
 			);
 			path = "Fend App";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B83A692062E40B008B42F8 /* TabBarViewController.swift in Sources */,
 				FEFB5C1220225532005F9418 /* ReportViewController.swift in Sources */,
 				B39F2C5920155D3E00785BBB /* ViewController.swift in Sources */,
 				B3AA7ACA20473B1400D40E45 /* MyReportsViewController.swift in Sources */,
@@ -410,7 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BC466548K3;
+				DEVELOPMENT_TEAM = EA7WNSC3PN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -430,7 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BC466548K3;
+				DEVELOPMENT_TEAM = EA7WNSC3PN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
