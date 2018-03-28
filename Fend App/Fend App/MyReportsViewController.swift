@@ -94,29 +94,6 @@ class MyReportsViewController: UIViewController, UITableViewDataSource, UITableV
                 self.tableView.reloadData()
             }
         })
-        /*
-        reportsRef.observeSingleEvent(of: .value, with: {(snapshot) in
-           // print (snapshot.childrenCount)
-            self.reportCount = snapshot.childrenCount
-            self.reportTable = []
-            for rest in snapshot.children.allObjects as! [DataSnapshot] {
-                //print (rest.value)
-                let dictionary = rest.value as! [String: Any]
-                let dateString = dictionary["date"] as! String
-                let descriptionString = dictionary["description"] as! String
-                let locationString = dictionary["location"] as! String
-                let information = "date: "+dateString+"\ndescription: "+descriptionString+"\nlocation: "+locationString
-               print (information)
-               // self.reportTable.append(information)
-                self.reportTable.insert(reportStruct(date: dateString, description: descriptionString, location: locationString), at: 0)
-                print("viewReport finished")
-            }
-            DispatchQueue.main.async(){
-                self.tableView.reloadData()
-            }
-            
-        })
- */
         
     }
     

@@ -29,11 +29,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad(){
         //        super.viewDidLoad()
-        /*let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
-        let newCenter = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height - 80)
-        loginButton.center = newCenter
-        view.addSubview(loginButton)
- */
         
         let imageView = UIImageView(frame: CGRect(x:141, y: 20, width: 93, height: 44))
         imageView.contentMode = .scaleAspectFit
@@ -43,28 +38,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.ref = Database.database().reference(fromURL: "fend1-7e1bd.firebaseio.com")
         getFBUserData()
-       
-        /*
-        if (FBSDKAccessToken.current() != nil){
-           //logged in
-        }else{
-            print("load logoutSegue")
-           // self.performSegue(withIdentifier: "unwindtoLogin", sender: self)
-            self.performSegue(withIdentifier: "logoutSegue", sender: self)
-        } */
+
         
     }
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
         
-       /* if (FBSDKAccessToken.current() != nil){
-            //logged in
-        }else{
-            print("appear logoutSegue")
-            //self.performSegue(withIdentifier: "unwindtoLogin", sender: self)
-            self.performSegue(withIdentifier: "logoutSegue", sender: self)
-        } */
     }
     
 
@@ -94,14 +74,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             about.textLabel?.text = list[4]
             return about;
         }
-//        } else{
-//            let logout = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "logout")
-//            logout.textLabel?.text = list[5]
-//            return logout
-//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let segueIdentifier: String
         switch indexPath.row {
         case 0: //For "one"

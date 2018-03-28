@@ -69,14 +69,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let ReportViewController = segue.destination as? ReportViewController {
-            ReportViewController.dict = dict
-            print (ReportViewController.dict)
-        }
-    }
- */
     
     //function is fetching the user data
     func getFBUserData(){
