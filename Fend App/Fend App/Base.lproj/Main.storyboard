@@ -43,7 +43,7 @@
         <!--Report-->
         <scene sceneID="rmI-mp-tRB">
             <objects>
-                <viewController title="Report" id="C4i-0e-Ne3" customClass="ReportViewController" customModule="Fend_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="notificationController" title="Report" id="C4i-0e-Ne3" customClass="ReportViewController" customModule="Fend_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jol-cv-jRk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,13 +474,46 @@
                                             <action selector="searchClicked:" destination="wtK-V7-Nl9" eventType="touchUpInside" id="7Gh-nD-b7j"/>
                                         </connections>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="Jfw-a5-Gt0">
-                                        <rect key="frame" x="100" y="517" width="174" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wir-pz-noW">
+                                        <rect key="frame" x="8" y="477" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="Year"/>
                                         <connections>
-                                            <action selector="sliderChanged:" destination="wtK-V7-Nl9" eventType="valueChanged" id="qJ2-Q8-TaV"/>
+                                            <action selector="year:" destination="wtK-V7-Nl9" eventType="touchUpInside" id="mSh-WX-jxj"/>
                                         </connections>
-                                    </slider>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13R-e0-7sG">
+                                        <rect key="frame" x="8" y="439" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="Month"/>
+                                        <connections>
+                                            <action selector="month:" destination="wtK-V7-Nl9" eventType="touchUpInside" id="Yx4-I7-mql"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNg-IE-sEp">
+                                        <rect key="frame" x="8" y="401" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="Week"/>
+                                        <connections>
+                                            <action selector="week:" destination="wtK-V7-Nl9" eventType="touchUpInside" id="E3n-qn-L0U"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdb-zd-UsH">
+                                        <rect key="frame" x="8" y="363" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="Day"/>
+                                        <connections>
+                                            <action selector="day:" destination="wtK-V7-Nl9" eventType="touchUpInside" id="LqJ-LX-PtA"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -494,10 +527,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map icon" selectedImage="map icon" id="okv-Oj-GXe"/>
                     <connections>
+                        <outlet property="day" destination="qdb-zd-UsH" id="Gl8-aq-3gh"/>
                         <outlet property="googleMapsContainer" destination="QtN-Dh-NIB" id="XF4-uh-4jr"/>
-                        <outlet property="mapSlider" destination="Jfw-a5-Gt0" id="eOK-Vn-Zlr"/>
+                        <outlet property="month" destination="13R-e0-7sG" id="rxm-t9-lKy"/>
                         <outlet property="searchButton" destination="Wby-JJ-b3P" id="2AY-Td-rIY"/>
                         <outlet property="searchMaps" destination="Gb9-me-JYt" id="ubw-Ow-iA6"/>
+                        <outlet property="week" destination="ZNg-IE-sEp" id="2aa-wN-LZx"/>
+                        <outlet property="year" destination="wir-pz-noW" id="jRd-CF-9Rh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBD-pj-7Si" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -514,6 +550,7 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabBar" destination="nwx-yO-tPf" id="eGY-BB-Y1A"/>
                         <segue destination="wtK-V7-Nl9" kind="relationship" relationship="viewControllers" id="MC2-Lm-V6V"/>
                         <segue destination="C4i-0e-Ne3" kind="relationship" relationship="viewControllers" id="eo0-qK-GDK"/>
                         <segue destination="HuY-hS-HvE" kind="relationship" relationship="viewControllers" id="q9c-U2-J3N"/>

@@ -15,10 +15,14 @@ var HardwareName = ""
 var selectionFlag = 0
 
 //main bluetooth controller class
-class BTViewController: UIViewController, UITableViewDelegate {
+class BTViewController: UIViewController, UITableViewDelegate, UNUserNotificationCenterDelegate {
     var centralManager: CBCentralManager?
     var peripherals = Array<CBPeripheral>()
     var testFend: CBPeripheral!
+    let locationManager = CLLocationManager()
+    
+    var theftLat: Double!
+    var theftLong: Double!
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -26,6 +30,8 @@ class BTViewController: UIViewController, UITableViewDelegate {
         
         //Initialise CoreBluetooth Central Manager
         centralManager = CBCentralManager(delegate: self, queue: DispatchQueue.main)
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -34,10 +40,7 @@ class BTViewController: UIViewController, UITableViewDelegate {
         let currentItem = currentCell.textLabel!.text
         HardwareName = currentItem ?? ""
         selectionFlag = 1
-        let alert = UIAlertController(title: "You selected something!", message: currentItem, preferredStyle: .alert)
-         alert.addAction(UIAlertAction(title: "K cool", style: .default, handler: nil))
-         alert.addAction(UIAlertAction(title: "False Alarm!", style: .cancel, handler: nil))
-         self.present(alert, animated: true)
+
         for p in peripherals {
             if p.name == HardwareName {
                 print("Found the fend thing")
@@ -46,6 +49,18 @@ class BTViewController: UIViewController, UITableViewDelegate {
                 centralManager?.stopScan()
                 centralManager?.connect(testFend)
             }
+        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("got it")
+        
+        let reportViewController = ReportViewController()
+        reportViewController.theftLat = self.theftLat
+        reportViewController.theftLong = self.theftLong
+        
+        if let navigator = navigationController {
+            navigator.pushViewController(reportViewController, animated: true)
         }
     }
 }
@@ -63,17 +78,13 @@ extension BTViewController: CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         peripherals.append(peripheral)
         tableView.reloadData()
-        /*if peripheral.name == "testFend" {
-            print("Found the fend thing")
-            testFend = peripheral
-            testFend.delegate = self
-            centralManager?.stopScan()
-            centralManager?.connect(testFend)
-        }*/
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("Connected!")
+        let alert = UIAlertController(title: "Connection Successful", message: "You are connected to fend!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
         testFend.discoverServices(nil)
     }
 }
@@ -109,15 +120,21 @@ extension BTViewController: CBPeripheralDelegate {
             let b = UInt8(1)
             if a[0] != b {
                 print ("Button Pressed!")
-                getLocation()
-                sendAlert()
+                self.theftLat = getLocation().lat;
+                self.theftLong = getLocation().long;
+                
+                //print("latitude: \(latitude)")
+                //print("longitude: \(longitude)")
+                
+                //sendAlert()
+                
                 let content = UNMutableNotificationContent()
-                content.title = "SOMEONE IS OPENING YOUR BACKPACK"
-                content.subtitle = "Your backpack is in troubleeeeeee"
-                content.body = "seriously go check your backpack now"
+                content.title = "Theft Alert!"
+                content.subtitle = "Check your backpack"
+                //content.userInfo = ["latitude": latitude, "longitude": longitude];
                 content.badge = 1
                 
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
                 
                 let request = UNNotificationRequest(identifier: "backpackbreach", content: content, trigger: trigger)
                 
@@ -131,7 +148,6 @@ extension BTViewController: CBPeripheralDelegate {
 extension BTViewController: CLLocationManagerDelegate {
     func getLocation() -> (lat: Double, long: Double){
         var currentLocation = CLLocation()
-        var locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         currentLocation = locationManager.location!
@@ -162,7 +178,5 @@ extension BTViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return peripherals.count
     }
-    
-    
 }
 
