@@ -30,6 +30,9 @@ class ReportViewController: UIViewController, UITextFieldDelegate {
     var latitude : CLLocationDegrees = 0.0
     var longitude : CLLocationDegrees = 0.0
     
+    var theftLat : Double!
+    var theftLong : Double!
+    
     @IBAction func buttonSubmit(_ sender: UIButton) {
         addReport()
         self.DescriptionTextField.text = ""

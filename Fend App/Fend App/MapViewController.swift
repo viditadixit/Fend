@@ -11,14 +11,19 @@ import GoogleMaps
 import GooglePlaces
 import CoreLocation
 import FirebaseDatabase
+import UserNotifications
 
 class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var googleMapsContainer: UIView!
     @IBOutlet weak var searchMaps: UISearchBar!
     @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var mapSlider: UISlider!
     
+    @IBOutlet weak var day: UIButton!
+    @IBOutlet weak var week: UIButton!
+    @IBOutlet weak var month: UIButton!
+    @IBOutlet weak var year: UIButton!
+
     var googleMapsView: GMSMapView!
     var placesClient: GMSPlacesClient!
     var camera: GMSCameraPosition!
@@ -42,9 +47,35 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
         self.view.addSubview(googleMapsView)
         googleMapsView.addSubview(searchMaps)
         googleMapsView.addSubview(searchButton)
-        googleMapsView.addSubview(mapSlider)
         
-        displayMarkers(time: 2)
+        googleMapsView.addSubview(day)
+        googleMapsView.addSubview(week)
+        googleMapsView.addSubview(month)
+        googleMapsView.addSubview(year)
+        
+        setUI()
+
+        self.displayMarkers(time:2)
+        
+        for family: String in UIFont.familyNames
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
+    }
+    
+    func setUI() {
+        day.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        day.titleLabel?.font = UIFont(name: "Nunito-Regular", size: 16)
+        week.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        week.titleLabel?.font = UIFont(name: "Nunito-Regular", size: 16)
+        month.backgroundColor = UIColor(red: 102/255, green: 196/255, blue: 176/255, alpha: 1);
+        month.titleLabel?.font = UIFont(name: "Nunito-Regular", size: 16)
+        year.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        year.titleLabel?.font = UIFont(name: "Nunito-Regular", size: 16)
     }
     
     @IBAction func searchClicked(_ sender: Any) {
@@ -66,7 +97,6 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
     }
     
     func displayMarkers(time: integer_t) {
-        
         //clear all current markers
         self.googleMapsView.clear()
         
@@ -92,23 +122,38 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
         }) {(error) in print(error.localizedDescription)}
     }
     
-    @IBAction func sliderChanged(_ sender: Any) {
-        mapSlider.setValue(Float(lroundf(mapSlider.value)), animated: true)
-        
-        if (mapSlider.value == 0.0) {
-            //googleMapsView.animate(toZoom: 0)
-            self.displayMarkers(time: 0)
-        } else if (mapSlider.value == 1.0) {
-            //googleMapsView.animate(toZoom: 5)
-            self.displayMarkers(time: 1)
-        } else if (mapSlider.value == 2.0) {
-            //googleMapsView.animate(toZoom: 10)
-            self.displayMarkers(time:2)
-        } else {
-            //googleMapsView.animate(toZoom: 15)
-            self.displayMarkers(time: 3)
-        }
+    @IBAction func day(_ sender: Any) {
+        day.backgroundColor = UIColor(red: 102/255, green: 196/255, blue: 176/255, alpha: 1);
+        week.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        month.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        year.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        self.displayMarkers(time: 0)
     }
+    
+    @IBAction func week(_ sender: Any) {
+        day.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        week.backgroundColor = UIColor(red: 102/255, green: 196/255, blue: 176/255, alpha: 1);
+        month.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        year.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        self.displayMarkers(time: 1)
+    }
+    
+    @IBAction func month(_ sender: Any) {
+        day.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        week.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        month.backgroundColor = UIColor(red: 102/255, green: 196/255, blue: 176/255, alpha: 1);
+        year.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        self.displayMarkers(time:2)
+    }
+    
+    @IBAction func year(_ sender: Any) {
+        day.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        week.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        month.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        year.backgroundColor = UIColor(red: 102/255, green: 196/255, blue: 176/255, alpha: 1);
+        self.displayMarkers(time: 3)
+    }
+    
     
     func isValidDate(date: Date, time: integer_t) -> Bool {
         var earlyDate : Date

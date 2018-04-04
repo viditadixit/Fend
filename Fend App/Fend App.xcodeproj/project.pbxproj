@@ -20,6 +20,9 @@
 		B3AA7ACA20473B1400D40E45 /* MyReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7AC920473B1400D40E45 /* MyReportsViewController.swift */; };
 		B3B83A692062E40B008B42F8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B83A682062E40B008B42F8 /* TabBarViewController.swift */; };
 		F727FF92202042CA0037D60F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727FF91202042CA0037D60F /* MapViewController.swift */; };
+		F77BFF1C20755EEC008E6E0B /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F77BFF1220755EEC008E6E0B /* Lato-Regular.ttf */; };
+		F77BFF222075610A008E6E0B /* OldStandard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F77BFF1F20756109008E6E0B /* OldStandard-Regular.ttf */; };
+		F77BFF2620756592008E6E0B /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F77BFF2520756592008E6E0B /* Nunito-Regular.ttf */; };
 		FEFB5C1220225532005F9418 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB5C1120225532005F9418 /* ReportViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,10 @@
 		B3B83A682062E40B008B42F8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fend_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F727FF91202042CA0037D60F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F77BFF1220755EEC008E6E0B /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Lato/Lato-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		F77BFF1F20756109008E6E0B /* OldStandard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OldStandard-Regular.ttf"; path = "../../../../Downloads/Old_Standard_TT/OldStandard-Regular.ttf"; sourceTree = "<group>"; };
+		F77BFF2520756592008E6E0B /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-Regular.ttf"; path = "../../../../Downloads/Nunito/Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		F785DCFC206980F200F12CF0 /* Fend App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fend App.entitlements"; sourceTree = "<group>"; };
 		FEFB5C1120225532005F9418 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				B38EE7AB1FBEC84100834849 /* Fend App */,
+				F77BFF0A20755ED8008E6E0B /* Fonts */,
 				B38EE7AA1FBEC84100834849 /* Products */,
 				4A45AE15651C523EE00A3F77 /* Pods */,
 				1014A748E2D3FF208DA23DBC /* Frameworks */,
@@ -96,6 +104,7 @@
 		B38EE7AB1FBEC84100834849 /* Fend App */ = {
 			isa = PBXGroup;
 			children = (
+				F785DCFC206980F200F12CF0 /* Fend App.entitlements */,
 				B3A62C1E2044AEF200ABE9F7 /* GoogleService-Info.plist */,
 				B38EE7AC1FBEC84100834849 /* AppDelegate.swift */,
 				B38EE7B41FBEC84100834849 /* Main.storyboard */,
@@ -111,6 +120,16 @@
 				B3B83A682062E40B008B42F8 /* TabBarViewController.swift */,
 			);
 			path = "Fend App";
+			sourceTree = "<group>";
+		};
+		F77BFF0A20755ED8008E6E0B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F77BFF2520756592008E6E0B /* Nunito-Regular.ttf */,
+				F77BFF1F20756109008E6E0B /* OldStandard-Regular.ttf */,
+				F77BFF1220755EEC008E6E0B /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +167,12 @@
 				TargetAttributes = {
 					B38EE7A81FBEC84100834849 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -177,6 +201,9 @@
 			files = (
 				B38EE7BB1FBEC84100834849 /* LaunchScreen.storyboard in Resources */,
 				B3A62C1F2044AEF200ABE9F7 /* GoogleService-Info.plist in Resources */,
+				F77BFF222075610A008E6E0B /* OldStandard-Regular.ttf in Resources */,
+				F77BFF1C20755EEC008E6E0B /* Lato-Regular.ttf in Resources */,
+				F77BFF2620756592008E6E0B /* Nunito-Regular.ttf in Resources */,
 				B38EE7B81FBEC84100834849 /* Assets.xcassets in Resources */,
 				B38EE7B61FBEC84100834849 /* Main.storyboard in Resources */,
 			);
@@ -330,7 +357,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vidita Dixit (Q3R87K9K26)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -387,7 +414,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vidita Dixit (Q3R87K9K26)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -413,16 +440,20 @@
 			baseConfigurationReference = 4DE10D4D5C76BD657934FEB5 /* Pods-Fend App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EA7WNSC3PN;
+				CODE_SIGN_ENTITLEMENTS = "Fend App/Fend App.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vidita Dixit (Q3R87K9K26)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3G978376LC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "Fend App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Fend-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FendApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b26df41d-5251-47e4-822f-787cbd49e723";
+				PROVISIONING_PROFILE_SPECIFIER = Fend;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -433,16 +464,20 @@
 			baseConfigurationReference = 1C881F7856B5F37376648603 /* Pods-Fend App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EA7WNSC3PN;
+				CODE_SIGN_ENTITLEMENTS = "Fend App/Fend App.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vidita Dixit (Q3R87K9K26)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3G978376LC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "Fend App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Fend-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FendApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b26df41d-5251-47e4-822f-787cbd49e723";
+				PROVISIONING_PROFILE_SPECIFIER = Fend;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
