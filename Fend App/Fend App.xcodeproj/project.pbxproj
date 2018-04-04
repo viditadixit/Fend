@@ -20,8 +20,6 @@
 		B3AA7ACA20473B1400D40E45 /* MyReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7AC920473B1400D40E45 /* MyReportsViewController.swift */; };
 		B3B83A692062E40B008B42F8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B83A682062E40B008B42F8 /* TabBarViewController.swift */; };
 		F727FF92202042CA0037D60F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727FF91202042CA0037D60F /* MapViewController.swift */; };
-		F77BFF1C20755EEC008E6E0B /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F77BFF1220755EEC008E6E0B /* Lato-Regular.ttf */; };
-		F77BFF222075610A008E6E0B /* OldStandard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F77BFF1F20756109008E6E0B /* OldStandard-Regular.ttf */; };
 		F77BFF2620756592008E6E0B /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F77BFF2520756592008E6E0B /* Nunito-Regular.ttf */; };
 		FEFB5C1220225532005F9418 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB5C1120225532005F9418 /* ReportViewController.swift */; };
 /* End PBXBuildFile section */
@@ -44,8 +42,6 @@
 		B3B83A682062E40B008B42F8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fend_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F727FF91202042CA0037D60F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		F77BFF1220755EEC008E6E0B /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Lato/Lato-Regular.ttf"; sourceTree = SOURCE_ROOT; };
-		F77BFF1F20756109008E6E0B /* OldStandard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OldStandard-Regular.ttf"; path = "../../../../Downloads/Old_Standard_TT/OldStandard-Regular.ttf"; sourceTree = "<group>"; };
 		F77BFF2520756592008E6E0B /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-Regular.ttf"; path = "../../../../Downloads/Nunito/Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		F785DCFC206980F200F12CF0 /* Fend App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fend App.entitlements"; sourceTree = "<group>"; };
 		FEFB5C1120225532005F9418 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -126,8 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				F77BFF2520756592008E6E0B /* Nunito-Regular.ttf */,
-				F77BFF1F20756109008E6E0B /* OldStandard-Regular.ttf */,
-				F77BFF1220755EEC008E6E0B /* Lato-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -201,8 +195,6 @@
 			files = (
 				B38EE7BB1FBEC84100834849 /* LaunchScreen.storyboard in Resources */,
 				B3A62C1F2044AEF200ABE9F7 /* GoogleService-Info.plist in Resources */,
-				F77BFF222075610A008E6E0B /* OldStandard-Regular.ttf in Resources */,
-				F77BFF1C20755EEC008E6E0B /* Lato-Regular.ttf in Resources */,
 				F77BFF2620756592008E6E0B /* Nunito-Regular.ttf in Resources */,
 				B38EE7B81FBEC84100834849 /* Assets.xcassets in Resources */,
 				B38EE7B61FBEC84100834849 /* Main.storyboard in Resources */,
