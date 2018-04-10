@@ -73,6 +73,7 @@ class MyReportsViewController: UIViewController, UITableViewDataSource, UITableV
         cell.textLabel?.numberOfLines = 0;
         let information = "Date: "+reportTable[indexPath.row].date+"\nDescription: "+reportTable[indexPath.row].description+"\nLocation: "+reportTable[indexPath.row].location
         cell.textLabel?.text = information
+        cell.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
         //cell.textLabel?.text = testArray[indexPath.row]
         return cell
     }

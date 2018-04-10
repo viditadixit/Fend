@@ -56,22 +56,27 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         if(indexPath.row == 0){
             let account = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "account")
             account.textLabel?.text = list[0]
+            account.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
             return account;
         }else if(indexPath.row == 1){
             let reports = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "reports")
             reports.textLabel?.text = list[1]
+            reports.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
             return reports;
         }else if(indexPath.row == 2){
             let device = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "device")
             device.textLabel?.text = list[2]
+            device.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
             return device;
         }else if (indexPath.row == 3){
             let notif = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "notif")
             notif.textLabel?.text = list[3]
+            notif.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
             return notif;
         }else {
             let about = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "about")
             about.textLabel?.text = list[4]
+            about.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
             return about;
         }
     }
@@ -130,6 +135,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.dict = result as! [String: AnyObject]
                 let name = self.dict["name"]
                 self.accountName.text = (name as! String)
+                self.accountName.font = UIFont(name: "Nunito-Regular", size: 17)
             }
         })
     }

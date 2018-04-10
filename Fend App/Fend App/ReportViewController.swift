@@ -16,16 +16,24 @@ import FirebaseAuth
 import FirebaseDatabase
 import GooglePlaces
 
-class ReportViewController: UIViewController, UITextFieldDelegate {
+class ReportViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var theftPicker: UIPickerView!
     
     var refReports: DatabaseReference!
     var ref: DatabaseReference!
     var locationRef: DatabaseReference!
     var dict : [String : AnyObject]!
+    var pickerData = ["Theft Attempted", "Theft Occurred"]
     
     @IBOutlet weak var DescriptionTextField: UITextField!
     @IBOutlet weak var LocationText: UITextField!
     @IBOutlet weak var Date: UIDatePicker!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var theftLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     
     var latitude : CLLocationDegrees = 0.0
     var longitude : CLLocationDegrees = 0.0
@@ -33,10 +41,15 @@ class ReportViewController: UIViewController, UITextFieldDelegate {
     var theftLat : Double!
     var theftLong : Double!
     
+    var theftType : String!
+    
     @IBAction func buttonSubmit(_ sender: UIButton) {
         addReport()
+        //print(theftPicker.selectedRow(inComponent: 0))
+        //print(theftPicker.selectedRow(inComponent: 1))
         self.DescriptionTextField.text = ""
         self.LocationText.text = ""
+        tabBarController?.selectedIndex = 0
     }
     
     override func viewDidLoad(){
@@ -56,6 +69,21 @@ class ReportViewController: UIViewController, UITextFieldDelegate {
                 }
             })
         }
+        
+        //submitButton.layer.cornerRadius = 0.5 * submitButton.bounds.size.width
+        //submitButton.clipsToBounds = true
+        
+        self.theftPicker.delegate = self
+        self.theftPicker.dataSource = self
+        
+        setUI()
+    }
+    
+    func setUI() {
+        dateLabel.font = UIFont(name: "Nunito-Regular", size: 17)
+        locationLabel.font = UIFont(name: "Nunito-Regular", size: 17)
+        descriptionLabel.font = UIFont(name: "Nunito-Regular", size: 17)
+        theftLabel.font = UIFont(name: "Nunito-Regular", size: 17)
     }
     
     @IBAction func locationClicked(_ sender: Any) {
@@ -64,14 +92,32 @@ class ReportViewController: UIViewController, UITextFieldDelegate {
         present(autocompleteController, animated: true, completion: nil)
     }
     
-    override func didReceiveMemoryWarning(){
-        super.didReceiveMemoryWarning()
-        
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == self.DescriptionTextField {
+            moveTextField(textField: DescriptionTextField, moveDistance: -200, up: true)
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == self.DescriptionTextField {
+            moveTextField(textField: DescriptionTextField, moveDistance: -200, up: false)
+        }
+    }
+    
+    func moveTextField(textField: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement = CGFloat(up ? moveDistance : -moveDistance)
+        
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
     }
     
     func changeDateToString(sender: UIDatePicker) -> String {
@@ -92,7 +138,8 @@ class ReportViewController: UIViewController, UITextFieldDelegate {
         let report = ["id": key,
                       "date": convertedDate,
                       "location": LocationText.text! as String,
-                      "description" : DescriptionTextField.text! as String ]
+                      "description" : DescriptionTextField.text! as String,
+                      "theft" : theftType as String]
         refReports.child(key).setValue(report)
         
         locationRef = Database.database().reference().child("location")
@@ -100,11 +147,36 @@ class ReportViewController: UIViewController, UITextFieldDelegate {
         
         let pin = ["latitude": Double(latitude),
                    "longitude": Double(longitude),
-                   "date": convertedDate] as [String : Any]
+                   "date": convertedDate,
+                   "theft": theftType as String] as [String : Any]
         
         locationRef.child(key1).setValue(pin)
         
         //TODO: store pin in database
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count;
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        theftType = pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = view as? UILabel ?? UILabel()
+        label.font = UIFont(name: "Nunito-Regular", size: 17)
+        label.text = pickerData[row]
+        label.textAlignment = NSTextAlignment.center
+        return label
     }
 }
 
