@@ -56,15 +56,6 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
         setUI()
 
         self.displayMarkers(time:2)
-        
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
     }
     
     func setUI() {
@@ -109,12 +100,14 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
                 let lat = restDict!["latitude"] as! Double
                 let lon = restDict!["longitude"] as! Double
                 let date = restDict!["date"] as? String
+                let theft = restDict!["theft"] as? String
+                print(theft)
                 
                 if (self.isValidDate(date: (date?.toDate(dateFormat: "MM/dd/yyyy HH:mm"))!, time: time)) {
                     let position = CLLocationCoordinate2D(latitude: lat, longitude: lon)
                     let marker = GMSMarker(position: position)
                     marker.icon = UIImage(named: "pin")
-                    marker.title = "Theft Occurred"
+                    marker.title = theft
                     marker.snippet = date
                     marker.map = self.googleMapsView
                 }

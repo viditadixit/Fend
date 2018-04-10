@@ -36,7 +36,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         super.viewDidLoad()
         //create button
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
-        let newCenter = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height*(3/4))
+        let newCenter = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height*(2/3))
         loginButton.center = newCenter
         //add it to view
         view.addSubview(loginButton)
