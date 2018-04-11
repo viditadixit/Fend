@@ -189,21 +189,8 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="account" rowHeight="50" id="sh6-WS-xkQ">
-                                        <rect key="frame" x="0.0" y="28" width="297" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sh6-WS-xkQ" id="q0Y-BE-ZQF">
-                                            <rect key="frame" x="0.0" y="0.0" width="264" height="49.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <connections>
-                                            <segue destination="CsY-o9-TMM" kind="show" identifier="toAccount" id="tJv-xE-Pm1"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reports" rowHeight="50" id="AKT-Nm-TJE">
-                                        <rect key="frame" x="0.0" y="78" width="297" height="50"/>
+                                        <rect key="frame" x="0.0" y="28" width="297" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AKT-Nm-TJE" id="Wmf-4Z-Td9">
                                             <rect key="frame" x="0.0" y="0.0" width="264" height="49.5"/>
@@ -216,7 +203,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="device" rowHeight="50" id="OrB-u0-fY0">
-                                        <rect key="frame" x="0.0" y="128" width="297" height="50"/>
+                                        <rect key="frame" x="0.0" y="78" width="297" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OrB-u0-fY0" id="gGt-f3-d3s">
                                             <rect key="frame" x="0.0" y="0.0" width="264" height="49.5"/>
@@ -229,7 +216,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="notif" rowHeight="50" id="ECq-I3-dT8">
-                                        <rect key="frame" x="0.0" y="178" width="297" height="50"/>
+                                        <rect key="frame" x="0.0" y="128" width="297" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ECq-I3-dT8" id="c0d-Jg-BPp">
                                             <rect key="frame" x="0.0" y="0.0" width="264" height="49.5"/>
@@ -239,6 +226,19 @@
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <connections>
                                             <segue destination="UbO-56-BYv" kind="show" identifier="toAbout" id="4sL-Ng-Oul"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="purchase" rowHeight="50" id="sh6-WS-xkQ">
+                                        <rect key="frame" x="0.0" y="178" width="297" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sh6-WS-xkQ" id="q0Y-BE-ZQF">
+                                            <rect key="frame" x="0.0" y="0.0" width="264" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <connections>
+                                            <segue destination="CsY-o9-TMM" kind="show" identifier="toPurchase" id="tJv-xE-Pm1"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="about" rowHeight="50" id="DyH-mM-Tpv">
@@ -332,17 +332,17 @@
             </objects>
             <point key="canvasLocation" x="1778.4000000000001" y="1625.0374812593705"/>
         </scene>
-        <!--Account Info-->
+        <!--Purchase Fend-->
         <scene sceneID="EOj-AU-fyW">
             <objects>
-                <viewController storyboardIdentifier="accountInfo" title="Account Info" id="CsY-o9-TMM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="purchaseFend" title="Purchase Fend" id="CsY-o9-TMM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="etm-vc-lCm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Orw-Gu-fzk"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Account Info" id="rdS-4J-x5i"/>
+                    <navigationItem key="navigationItem" title="Purchase Fend" id="rdS-4J-x5i"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sez-0p-eUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

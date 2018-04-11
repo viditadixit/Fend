@@ -72,6 +72,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     //function is fetching the user data
     func getFBUserData(){
+        print("Grabbing FB Data")
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){

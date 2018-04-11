@@ -30,6 +30,7 @@ class MyReportsViewController: UIViewController, UITableViewDataSource, UITableV
         let date: String!
         let description: String!
         let location: String!
+        let theft: String!
     }
    
     var reportCount : UInt = 0
@@ -71,7 +72,7 @@ class MyReportsViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "reportInfo", for: indexPath)
         
         cell.textLabel?.numberOfLines = 0;
-        let information = "Date: "+reportTable[indexPath.row].date+"\nDescription: "+reportTable[indexPath.row].description+"\nLocation: "+reportTable[indexPath.row].location
+        let information = "Date: "+reportTable[indexPath.row].date+"\nDescription: "+reportTable[indexPath.row].description+"\nLocation: "+reportTable[indexPath.row].location+"\nTheft Type: "+reportTable[indexPath.row].theft
         cell.textLabel?.text = information
         cell.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
         //cell.textLabel?.text = testArray[indexPath.row]
@@ -91,7 +92,8 @@ class MyReportsViewController: UIViewController, UITableViewDataSource, UITableV
                 let dateString = dictionary["date"]
                 let descriptionString = dictionary["description"]
                 let locationString = dictionary["location"]
-                self.reportTable.insert(reportStruct(date: dateString, description: descriptionString, location: locationString), at: 0)
+                let theftString = dictionary["theft"]
+                self.reportTable.insert(reportStruct(date: dateString, description: descriptionString, location: locationString, theft: theftString), at: 0)
                 self.tableView.reloadData()
             }
         })

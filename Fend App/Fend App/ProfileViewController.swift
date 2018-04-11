@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var logoutButton: UIButton!
     
-    let list = ["Account Info", "My Reports", "Connect Device", "Notification Settings", "About Fend", "Logout"]
+    let list = ["My Reports", "Connect Device", "Notification Settings", "Purchase Fend", "About Fend", "Logout"]
     
     override func viewDidLoad(){
         //        super.viewDidLoad()
@@ -54,25 +54,25 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.row == 0){
-            let account = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "account")
-            account.textLabel?.text = list[0]
-            account.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
-            return account;
-        }else if(indexPath.row == 1){
             let reports = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "reports")
-            reports.textLabel?.text = list[1]
+            reports.textLabel?.text = list[0]
             reports.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
             return reports;
-        }else if(indexPath.row == 2){
+        }else if(indexPath.row == 1){
             let device = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "device")
-            device.textLabel?.text = list[2]
+            device.textLabel?.text = list[1]
             device.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
             return device;
-        }else if (indexPath.row == 3){
+        }else if(indexPath.row == 2){
             let notif = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "notif")
-            notif.textLabel?.text = list[3]
+            notif.textLabel?.text = list[2]
             notif.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
             return notif;
+        }else if (indexPath.row == 3){
+            let purchase = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "purchase")
+            purchase.textLabel?.text = list[3]
+            purchase.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
+            return purchase;
         }else {
             let about = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "about")
             about.textLabel?.text = list[4]
@@ -86,13 +86,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let segueIdentifier: String
         switch indexPath.row {
         case 0: //For "one"
-            segueIdentifier = "toAccount"
-        case 1: //For "two"
             segueIdentifier = "toReportList"
-        case 2: //For "three"
+        case 1: //For "two"
             segueIdentifier = "toDevice"
-        case 3: //For "four"
+        case 2: //For "three"
             segueIdentifier = "toNotifs"
+        case 3: //For "four"
+            segueIdentifier = "toPurchase"
         default: //For "five"
             segueIdentifier = "toAbout"
 //        default: //For "six"

@@ -49,6 +49,7 @@ class ReportViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         //print(theftPicker.selectedRow(inComponent: 1))
         self.DescriptionTextField.text = ""
         self.LocationText.text = ""
+        self.theftType = ""
         tabBarController?.selectedIndex = 0
     }
     
