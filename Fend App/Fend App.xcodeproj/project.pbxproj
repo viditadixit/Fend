@@ -162,7 +162,7 @@
 				TargetAttributes = {
 					B38EE7A81FBEC84100834849 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -439,8 +439,8 @@
 				CODE_SIGN_ENTITLEMENTS = "Fend App/Fend App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vidita Dixit (Q3R87K9K26)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 3G978376LC;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EA7WNSC3PN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -449,8 +449,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FendApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b26df41d-5251-47e4-822f-787cbd49e723";
-				PROVISIONING_PROFILE_SPECIFIER = Fend;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -464,8 +464,8 @@
 				CODE_SIGN_ENTITLEMENTS = "Fend App/Fend App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vidita Dixit (Q3R87K9K26)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 3G978376LC;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EA7WNSC3PN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -474,8 +474,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FendApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b26df41d-5251-47e4-822f-787cbd49e723";
-				PROVISIONING_PROFILE_SPECIFIER = Fend;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -7,15 +7,26 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+import Foundation
 
 class PushNotificationsViewController: UIViewController {
     
-    @IBOutlet weak var notifications: UITextView!
-
+    @IBOutlet weak var tableView: UITableView!
+    
+    var refTriggers: DatabaseReference!
+    var dict : [String: AnyObject]!
+    var ref: DatabaseReference!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        notifications.font = UIFont(name: "Nunito-Regular", size: 17)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
     }
 
     override func didReceiveMemoryWarning() {

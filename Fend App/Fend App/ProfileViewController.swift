@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var logoutButton: UIButton!
     
-    let list = ["My Reports", "Connect Device", "Notification Settings", "Purchase Fend", "About Fend", "Logout"]
+    let list = ["My Reports", "Connect Device", "Past Notifications", "Purchase Fend", "About Fend", "Logout"]
     
     override func viewDidLoad(){
         //        super.viewDidLoad()
