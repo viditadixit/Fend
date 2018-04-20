@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -335,18 +335,122 @@
         <!--Purchase Fend-->
         <scene sceneID="EOj-AU-fyW">
             <objects>
-                <viewController storyboardIdentifier="purchaseFend" title="Purchase Fend" id="CsY-o9-TMM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="purchaseFend" title="Purchase Fend" id="CsY-o9-TMM" customClass="PurchaseFendViewController" customModule="Fend_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="etm-vc-lCm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Fend Hardware Quantity:  ($39.95 each)" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVj-2a-tfz">
+                                <rect key="frame" x="12" y="100" width="236" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Shipping Address:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kty-Uy-A2H">
+                                <rect key="frame" x="12" y="239" width="151" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="67f-m9-Z03">
+                                <rect key="frame" x="164" y="291" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FHc-Ei-8uJ">
+                                <rect key="frame" x="164" y="341" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cty-YM-kb9">
+                                <rect key="frame" x="164" y="241" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Email Address:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yiy-XW-D6o">
+                                <rect key="frame" x="12" y="338" width="132" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Phone Number:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rmE-QY-OHY">
+                                <rect key="frame" x="12" y="288" width="132" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Full Name:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dWb-lp-Nle">
+                                <rect key="frame" x="12" y="188" width="132" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hA9-vq-z84">
+                                <rect key="frame" x="291" y="73" width="71" height="94"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="etm-vc-lCm" id="rux-1G-AYl"/>
+                                    <outlet property="delegate" destination="etm-vc-lCm" id="o2e-tt-JEI"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgN-oj-wwn">
+                                <rect key="frame" x="96" y="415" width="183" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.3799299002" green="0.77108764649999995" blue="0.69019722939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Proceed to Payment">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="WQu-A1-Suw" eventType="touchUpInside" id="pDM-GQ-dls"/>
+                                    <action selector="paymentButton:" destination="CsY-o9-TMM" eventType="touchUpInside" id="WX9-zt-CRD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f42-Cu-tR6">
+                                <rect key="frame" x="164" y="241" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="addressClicked:" destination="CsY-o9-TMM" eventType="touchUpInside" id="JJX-dV-OEm"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbp-d8-2rn">
+                                <rect key="frame" x="164" y="191" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Orw-Gu-fzk"/>
                     </view>
                     <navigationItem key="navigationItem" title="Purchase Fend" id="rdS-4J-x5i"/>
+                    <connections>
+                        <outlet property="address" destination="kty-Uy-A2H" id="lSY-bg-w2v"/>
+                        <outlet property="addressField" destination="Cty-YM-kb9" id="iTT-p6-tm9"/>
+                        <outlet property="email" destination="yiy-XW-D6o" id="Voe-tJ-RtU"/>
+                        <outlet property="emailField" destination="FHc-Ei-8uJ" id="eEK-0c-gv4"/>
+                        <outlet property="name" destination="dWb-lp-Nle" id="hIO-pO-Qlw"/>
+                        <outlet property="nameField" destination="xbp-d8-2rn" id="jhq-jW-6kQ"/>
+                        <outlet property="phone" destination="rmE-QY-OHY" id="GhC-Eu-mhG"/>
+                        <outlet property="phoneField" destination="67f-m9-Z03" id="zHr-6s-8l7"/>
+                        <outlet property="quantity" destination="FVj-2a-tfz" id="KdQ-ks-Fux"/>
+                        <outlet property="quantityPicker" destination="hA9-vq-z84" id="Bf5-ng-H1i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sez-0p-eUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2516" y="1620"/>
+            <point key="canvasLocation" x="2516" y="1619.6401799100452"/>
         </scene>
         <!--Connect Device-->
         <scene sceneID="iRl-F8-yWO">
@@ -407,7 +511,7 @@
                                 <rect key="frame" x="310" y="93" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Push Notifications" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tBw-Zn-Ahk">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Push Notifications" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBw-Zn-Ahk">
                                 <rect key="frame" x="16" y="93" width="193" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -419,6 +523,9 @@
                         <viewLayoutGuide key="safeArea" id="Nrk-ZB-qPK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Notification Settings" id="RA8-Vz-cRD"/>
+                    <connections>
+                        <outlet property="notifications" destination="tBw-Zn-Ahk" id="tmW-Mf-qnu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pu0-Un-38F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

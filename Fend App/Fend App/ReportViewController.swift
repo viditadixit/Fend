@@ -45,18 +45,14 @@ class ReportViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     
     @IBAction func buttonSubmit(_ sender: UIButton) {
         addReport()
-        //print(theftPicker.selectedRow(inComponent: 0))
-        //print(theftPicker.selectedRow(inComponent: 1))
         self.DescriptionTextField.text = ""
         self.LocationText.text = ""
-        self.theftType = ""
+
         tabBarController?.selectedIndex = 0
     }
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-        self.DescriptionTextField.delegate = self;
         
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler: { (connection, result, error) -> Void in
@@ -74,10 +70,13 @@ class ReportViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         //submitButton.layer.cornerRadius = 0.5 * submitButton.bounds.size.width
         //submitButton.clipsToBounds = true
         
-        self.theftPicker.delegate = self
-        self.theftPicker.dataSource = self
+        //self.theftPicker.delegate = self
+        //self.theftPicker.dataSource = self
+        //self.DescriptionTextField.delegate = self;
         
-        setUI()
+        theftType = "Theft Attempted"
+        
+        //setUI()
     }
     
     func setUI() {
