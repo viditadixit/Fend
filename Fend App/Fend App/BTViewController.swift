@@ -9,6 +9,11 @@ import UIKit
 import CoreBluetooth
 import UserNotifications
 import CoreLocation
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+import FBSDKCoreKit
+import GoogleMaps
 
 let microbitCBUUID = CBUUID(string: "0xA000")
 var HardwareName = ""
@@ -26,6 +31,9 @@ class BTViewController: UIViewController, UITableViewDelegate, UNUserNotificatio
     
     var currentLocation = CLLocation()
     
+    var refTriggers: DatabaseReference!
+    var dict : [String : AnyObject]!
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +44,16 @@ class BTViewController: UIViewController, UITableViewDelegate, UNUserNotificatio
         center.delegate = self
         
         currentLocation = CLLocationManager().location!
+        
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    self.dict = result as! [String : AnyObject]
+                    let val = self.dict["id"] as! String
+                    self.refTriggers = Database.database().reference().child("users").child(val).child("triggers")
+                }
+            })
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -127,6 +145,17 @@ extension BTViewController: CBPeripheralDelegate {
                 self.theftLat = getLocation().lat;
                 self.theftLong = getLocation().long;
                 
+                let key = refTriggers.childByAutoId().key
+                let convertedDate = changeDateToString(sender: NSDate())
+                
+                getAddress() { (returnAddress) in
+                    let address = returnAddress
+                    let report = ["id": key,
+                                  "date": convertedDate,
+                                  "address": address]
+                    self.refTriggers.child(key).setValue(report)
+                }
+                
                 //print("latitude: \(latitude)")
                 //print("longitude: \(longitude)")
                 
@@ -146,6 +175,30 @@ extension BTViewController: CBPeripheralDelegate {
             }
         }
         print("Notified!")
+    }
+    
+    func changeDateToString(sender: NSDate) -> String {
+        print("print \(sender)")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+        let somedateString  = dateFormatter.string(from: sender as Date)
+        
+        print(somedateString)
+        return somedateString
+    }
+    
+    func getAddress(currentAdd : @escaping ( _ returnAddress :String)->Void) {
+        let geocoder = GMSGeocoder()
+        let coordinate = CLLocationCoordinate2DMake(Double(self.theftLat),Double(self.theftLong))
+        geocoder.reverseGeocodeCoordinate(coordinate) { response , error in
+            if let address = response?.firstResult() {
+                let lines = address.lines! as [String]
+                var currentAddress = String()
+                currentAddress = lines.joined(separator: "\n")
+                currentAdd(currentAddress)
+            }
+        }
     }
 }
 
