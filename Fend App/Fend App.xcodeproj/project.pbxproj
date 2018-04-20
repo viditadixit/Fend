@@ -20,6 +20,7 @@
 		B3AA7ACA20473B1400D40E45 /* MyReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7AC920473B1400D40E45 /* MyReportsViewController.swift */; };
 		B3B83A692062E40B008B42F8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B83A682062E40B008B42F8 /* TabBarViewController.swift */; };
 		F727FF92202042CA0037D60F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727FF91202042CA0037D60F /* MapViewController.swift */; };
+		F794A665207E92CB00BC71CE /* PurchaseFendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794A664207E92CB00BC71CE /* PurchaseFendViewController.swift */; };
 		F7D24A0F207C2AA800A8A0AA /* AboutFendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D24A0E207C2AA800A8A0AA /* AboutFendViewController.swift */; };
 		F7D24A11207D383100A8A0AA /* PushNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D24A10207D383100A8A0AA /* PushNotificationsViewController.swift */; };
 		F7D24A14207D425900A8A0AA /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7D24A12207D41AD00A8A0AA /* Nunito-Regular.ttf */; };
@@ -45,6 +46,7 @@
 		CE44E3DA64EF5C6B38EDBC25 /* Pods_Fend_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fend_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F727FF91202042CA0037D60F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F785DCFC206980F200F12CF0 /* Fend App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fend App.entitlements"; sourceTree = "<group>"; };
+		F794A664207E92CB00BC71CE /* PurchaseFendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseFendViewController.swift; sourceTree = "<group>"; };
 		F7D24A0E207C2AA800A8A0AA /* AboutFendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutFendViewController.swift; sourceTree = "<group>"; };
 		F7D24A10207D383100A8A0AA /* PushNotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsViewController.swift; sourceTree = "<group>"; };
 		F7D24A12207D41AD00A8A0AA /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				B3B83A682062E40B008B42F8 /* TabBarViewController.swift */,
 				F7D24A0E207C2AA800A8A0AA /* AboutFendViewController.swift */,
 				F7D24A10207D383100A8A0AA /* PushNotificationsViewController.swift */,
+				F794A664207E92CB00BC71CE /* PurchaseFendViewController.swift */,
 			);
 			path = "Fend App";
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				0CD18B54203B6BDB00C6080D /* BTViewController.swift in Sources */,
 				F727FF92202042CA0037D60F /* MapViewController.swift in Sources */,
 				B370442A20224D8500A5FB2F /* ProfileViewController.swift in Sources */,
+				F794A665207E92CB00BC71CE /* PurchaseFendViewController.swift in Sources */,
 				F7D24A11207D383100A8A0AA /* PushNotificationsViewController.swift in Sources */,
 				B38EE7AD1FBEC84100834849 /* AppDelegate.swift in Sources */,
 				F7D24A0F207C2AA800A8A0AA /* AboutFendViewController.swift in Sources */,
@@ -436,7 +440,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vidita Dixit (Q3R87K9K26)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3G978376LC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -445,8 +449,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FendApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "b26df41d-5251-47e4-822f-787cbd49e723";
+				PROVISIONING_PROFILE_SPECIFIER = Fend;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -461,7 +465,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vidita Dixit (Q3R87K9K26)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3G978376LC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -470,8 +474,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FendApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "b26df41d-5251-47e4-822f-787cbd49e723";
+				PROVISIONING_PROFILE_SPECIFIER = Fend;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

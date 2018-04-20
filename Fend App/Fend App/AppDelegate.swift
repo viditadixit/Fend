@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyDiS8Ok1aleLm1XXE7PtfBNEgTX614UxCw")
         GMSPlacesClient.provideAPIKey("AIzaSyDiS8Ok1aleLm1XXE7PtfBNEgTX614UxCw")
         
+        application.applicationIconBadgeNumber = 0;
+        
         /*let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
             // Enable or disable features based on authorization.
@@ -47,6 +49,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //if let accessToken = FBSDKAccessToken.current(){
           //  print("Hello World!")
      //   }
+        
+        if (launchOptions != nil) {
+            //print("opened bc notification???")
+            dump(launchOptions)
+            /*var notification = launchOptions![UIApplicationLaunchOptionsKey.remoteNotification]
+            if ((notification!) != nil) {
+                print("opened bc notification")
+            }*/
+        }
         
         return true
     }

@@ -24,6 +24,8 @@ class BTViewController: UIViewController, UITableViewDelegate, UNUserNotificatio
     var theftLat: Double!
     var theftLong: Double!
     
+    var currentLocation = CLLocation()
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,8 @@ class BTViewController: UIViewController, UITableViewDelegate, UNUserNotificatio
         centralManager = CBCentralManager(delegate: self, queue: DispatchQueue.main)
         let center = UNUserNotificationCenter.current()
         center.delegate = self
+        
+        currentLocation = CLLocationManager().location!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -118,7 +122,7 @@ extension BTViewController: CBPeripheralDelegate {
             let a = [UInt8] (unwrapped)
             print (a)
             let b = UInt8(1)
-            if a[0] != b {
+            if a[0] == b {
                 print ("Button Pressed!")
                 self.theftLat = getLocation().lat;
                 self.theftLong = getLocation().long;
@@ -146,11 +150,13 @@ extension BTViewController: CBPeripheralDelegate {
 }
 
 extension BTViewController: CLLocationManagerDelegate {
+    
     func getLocation() -> (lat: Double, long: Double){
-        var currentLocation = CLLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-        currentLocation = locationManager.location!
+        if (locationManager.location != nil) {
+            currentLocation = locationManager.location!
+        }
         print("latitude: \(currentLocation.coordinate.latitude)")
         print("longitude: \(currentLocation.coordinate.longitude)")
         return(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
@@ -162,6 +168,10 @@ extension BTViewController: CLLocationManagerDelegate {
         alert.addAction(UIAlertAction(title: "K cool", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "False Alarm!", style: .cancel, handler: nil))
         self.present(alert, animated: true)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        currentLocation = locations.last!
     }
 }
 
