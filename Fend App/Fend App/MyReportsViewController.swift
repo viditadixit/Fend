@@ -78,9 +78,7 @@ class MyReportsViewController: UIViewController, UITableViewDataSource, UITableV
         //cell.textLabel?.text = testArray[indexPath.row]
         return cell
     }
-    
 
-    
     func viewReport(){
         
         let reportsRef = Database.database().reference().child("users").child(fbId).child("reports")

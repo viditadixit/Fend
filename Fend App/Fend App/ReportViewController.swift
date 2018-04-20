@@ -198,7 +198,6 @@ extension ReportViewController: GMSAutocompleteViewControllerDelegate {
     
     // User canceled the operation.
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-        //LocationText.text = " "
         dismiss(animated: true, completion: nil)
     }
     
