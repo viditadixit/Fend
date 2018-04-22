@@ -440,7 +440,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vidita Dixit (Q3R87K9K26)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EA7WNSC3PN;
+				DEVELOPMENT_TEAM = 3G978376LC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -465,7 +465,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vidita Dixit (Q3R87K9K26)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EA7WNSC3PN;
+				DEVELOPMENT_TEAM = 3G978376LC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",

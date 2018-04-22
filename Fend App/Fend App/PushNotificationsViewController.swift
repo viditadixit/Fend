@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import Foundation
 
-class PushNotificationsViewController: UIViewController {
+class PushNotificationsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,6 +24,7 @@ class PushNotificationsViewController: UIViewController {
     struct triggerStruct{
         let date: String!
         let address: String!
+        let id: String!
     }
     
     var triggerCount : UInt = 0
@@ -47,7 +48,7 @@ class PushNotificationsViewController: UIViewController {
         return 1
     }
     
-    func tableView(_tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return self.triggerTable.count
     }
     
@@ -57,20 +58,36 @@ class PushNotificationsViewController: UIViewController {
         cell.textLabel?.numberOfLines = 0;
         let information = "Date: "+triggerTable[indexPath.row].date+"\nAddress: "+triggerTable[indexPath.row].address
         cell.textLabel?.text = information
-        print(information)
+        //print(information)
         cell.textLabel?.font = UIFont(name: "Nunito-Regular", size: 17)
         return cell
+
+    }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            
+            let thisId = self.triggerTable[indexPath.row].id as! String
+            self.refTriggers.child(thisId).removeValue()
+            
+            self.triggerTable.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+    
+        }
+        
+        return [delete]
     }
     
     func loadTable(){
         let triggerRef = Database.database().reference().child("users").child(fbId).child("triggers")
+        refTriggers = triggerRef
         triggerRef.queryOrderedByKey().observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as? [AnyHashable:String]
             {
                 let dateString = dictionary["date"]
                 let addressString = dictionary["address"]
-                self.triggerTable.insert(triggerStruct(date: dateString, address: addressString), at: 0)
+                let idString = dictionary["id"]
+                self.triggerTable.insert(triggerStruct(date: dateString, address: addressString, id: idString), at: 0)
                 self.tableView.reloadData()
             }
         })
