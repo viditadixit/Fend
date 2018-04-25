@@ -38,15 +38,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.ref = Database.database().reference(fromURL: "fend1-7e1bd.firebaseio.com")
         getFBUserData()
-
-        
     }
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
         
     }
-    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
@@ -161,7 +158,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated
     }
-    
   
 }
 

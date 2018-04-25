@@ -67,16 +67,19 @@ class ReportViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
             })
         }
         
-        //submitButton.layer.cornerRadius = 0.5 * submitButton.bounds.size.width
-        //submitButton.clipsToBounds = true
-        
-        //self.theftPicker.delegate = self
-        //self.theftPicker.dataSource = self
-        //self.DescriptionTextField.delegate = self;
+        self.theftPicker.delegate = self
+        self.theftPicker.dataSource = self
+        self.DescriptionTextField.delegate = self;
         
         theftType = "Theft Attempted"
         
-        //setUI()
+        setUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.theftPicker.delegate = self
+        self.theftPicker.dataSource = self
+        self.DescriptionTextField.delegate = self;
     }
     
     func setUI() {

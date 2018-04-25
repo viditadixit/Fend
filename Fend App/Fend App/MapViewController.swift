@@ -30,6 +30,9 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
     var locationManager = CLLocationManager()
     var locationRef: DatabaseReference!
     
+    var from = 1;
+    var to = 1;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,15 +58,20 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
         
         setUI()
 
-        self.displayMarkers(time:2)
+        self.displayMarkers(time: 1)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        self.displayMarkers(time: 1)
     }
     
     func setUI() {
         day.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
         day.titleLabel?.font = UIFont(name: "Nunito-Regular", size: 16)
-        week.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
+        week.backgroundColor = UIColor(red: 102/255, green: 196/255, blue: 176/255, alpha: 1);
         week.titleLabel?.font = UIFont(name: "Nunito-Regular", size: 16)
-        month.backgroundColor = UIColor(red: 102/255, green: 196/255, blue: 176/255, alpha: 1);
+        month.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
         month.titleLabel?.font = UIFont(name: "Nunito-Regular", size: 16)
         year.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
         year.titleLabel?.font = UIFont(name: "Nunito-Regular", size: 16)
@@ -94,7 +102,6 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
         //get coordinates from database
         locationRef = Database.database().reference().child("location")
         locationRef.observeSingleEvent(of: .value, with:  {(snapshot) in
-            //print(snapshot.childrenCount)
             for rest in snapshot.children.allObjects as! [DataSnapshot] {
                 let restDict = rest.value as? [String:Any]
                 let lat = restDict!["latitude"] as! Double
@@ -156,36 +163,29 @@ class MapViewController: UIViewController, UISearchBarDelegate, CLLocationManage
             if (date >= earlyDate) {
                 return true
             }
-            //print("Date is : \(earlyDate)")
         } else if (time == 1) {
             //1 week
             earlyDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!;
             if (date >= earlyDate) {
                 return true
             }
-            //print("Date is : \(earlyDate)")
         } else if (time == 2) {
             //1 month
             earlyDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())!;
             if (date >= earlyDate) {
                 return true
             }
-            //print("Date is : \(earlyDate)")
         } else if (time == 3) {
             //year
             earlyDate = Calendar.current.date(byAdding: .year, value: -1, to: Date())!;
             if (date >= earlyDate) {
                 return true
             }
-            //print("Date is : \(earlyDate)")
         }
         
         return false
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-    }
 }
 
 extension MapViewController: GMSAutocompleteViewControllerDelegate {

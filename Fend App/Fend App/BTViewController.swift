@@ -148,22 +148,58 @@ extension BTViewController: CBPeripheralDelegate {
                 let key = refTriggers.childByAutoId().key
                 let convertedDate = changeDateToString(sender: NSDate())
                 
-                getAddress() { (returnAddress) in
+                let geocoder = GMSGeocoder()
+                let coordinate = CLLocationCoordinate2DMake(Double(self.theftLat),Double(self.theftLong))
+                geocoder.reverseGeocodeCoordinate(coordinate) { response , error in
+                    if let address = response?.firstResult() {
+                        let lines = address.lines! as [String]
+                        var currentAddress = String()
+                        currentAddress = lines.joined(separator: "\n")
+                        
+                        let report = ["id": key,
+                                      "date": convertedDate,
+                                      "address": currentAddress] as [String : Any]
+                        self.refTriggers.child(key).setValue(report)
+                        
+                        let state = UIApplication.shared.applicationState
+                        if (state == .active) {
+                            //display alert
+                            let alert = UIAlertController(title: "Theft Alert!", message: "Theft detected at " + currentAddress + " on " + convertedDate, preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                            self.present(alert, animated: true)
+                        } else if (state == .background){
+                            let content = UNMutableNotificationContent()
+                            content.title = "Theft Alert!"
+                            content.subtitle = "Check your backpack"
+                            content.body = "Theft detected at " + currentAddress + " on " + convertedDate
+                            content.launchImageName = "fend logo"
+                            
+                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                            
+                            let request = UNNotificationRequest(identifier: "backpackbreach", content: content, trigger: trigger)
+                            
+                            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                        }
+                    }
+                }
+                
+                /*getAddress() { (returnAddress) in
                     let address = returnAddress
                     let report = ["id": key,
                                   "date": convertedDate,
                                   "address": address]
                     self.refTriggers.child(key).setValue(report)
-                }
+                }*/
                 
                 //print("latitude: \(latitude)")
                 //print("longitude: \(longitude)")
                 
                 //sendAlert()
                 
-                let content = UNMutableNotificationContent()
+                /*let content = UNMutableNotificationContent()
                 content.title = "Theft Alert!"
                 content.subtitle = "Check your backpack"
+                content.body = "Theft detected at " + convertedDate
                 //content.userInfo = ["latitude": latitude, "longitude": longitude];
                 content.badge = 1
                 
@@ -171,7 +207,7 @@ extension BTViewController: CBPeripheralDelegate {
                 
                 let request = UNNotificationRequest(identifier: "backpackbreach", content: content, trigger: trigger)
                 
-                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)*/
             }
         }
         print("Notified!")
